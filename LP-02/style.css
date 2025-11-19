@@ -71,8 +71,8 @@ body {
 }
 
 .circle {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background-color: #fff;
     color: #0e857a;
     border-radius: 50%;
@@ -149,19 +149,20 @@ body {
 
 /* Price */
 .price-info {
-    font-size: 12px;
+    font-size: 10px;
     margin: 15px 0;
     opacity: .9;
+    color: #a3a3a3;
 }
 
 /* Terms */
-.terms {
-    /* background: #ffffff20; */
+.terms { 
     padding: 15px;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 10px;
     text-align: left;
     line-height: 1.5;
+    color: #a3a3a3;
 }
 
 .terms h4 {
