@@ -314,8 +314,7 @@ body {
 
 .cloud {
     width: 100px;
-    height: 100px;
-    /* overflow: hidden; */
+    height: 100px; 
     margin: auto;
     text-align: center;
     position: absolute;
