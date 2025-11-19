@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gamestation</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="top">
+            <div class="menu-icon">☰</div>
+            <div class="title">Subscribe to <span class="theme-color">Game Of Stone</span></div>
+            <div class="lang">EN</div>
+        </div>
+
+        <div class="steps">
+            <div data-trans="step-1">Step 1/2</div>
+            <div class="d-none" data-trans="step-2">Step 2/2</div>
+            <div class="step"></div>
+            <div class="step"></div>
+        </div>
+
+        <h1 class="heading">Continue To <span class="theme-color">Play Now</span></h1>
+
+        <div class="controller">
+            <img src="download_icon.png" alt="Game Controller" width="300">
+        </div>
+
+        <form data-pin-req="">
+            <div class="label" data-trans="form-req-title">Enter your mobile number <br>you'll receive a PIN</div>
+            <div class="field">
+                <input class="field-input focus" type="tel" name="msisdn" maxlength="10" placeholder="--------"
+                    autocomplete="tel-national">
+
+                <div class="field-input__prefix">
+                    <svg class="field-icon" width="14" height="23" viewBox="0 0 14 23">
+                        <path d="M2 22.5C1.45 22.5 ..."></path>
+                    </svg>
+                    +973
+                </div>
+            </div>
+
+            <button class="btn btn-hint" type="submit" disabled data-trans="btn-req">Continue</button>
+
+            <div class="my-3">
+                Free for 24hrs
+            </div>
+            <div style="display:block;color:#050505;margin-top:20px;font-size:10px" data-trans="below_cta">
+                Disclaimer
+            </div>
+        </form>
+
+
+
+        <footer class="footer note" style="display:block;color:#bebebe;margin-top:20px;font-size:8px">
+            The subscription cost for Zain subscribers is 0.2 BHD/day renewed automatically.
+            You may unsubscribe at any time at: my.sla-digital.com, or by sending `UNSUB GOS` to 94005
+            For support please contact support@digifish3.com
+        </footer>
+
+    </div>
+    <script>
+        const input = document.querySelector('.field-input');
+        const button = document.querySelector('.btn-hint');
+
+        input.addEventListener('input', () => {
+            if (input.value.length === 10) {
+                button.removeAttribute('disabled');
+            } else {
+                button.setAttribute('disabled', true);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
