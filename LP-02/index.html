@@ -27,8 +27,13 @@
         <div class="icon-box">
             <div class="circle">
                 <img id="loadingImg" src="./loading-up-to-100.gif" alt="" width="100" />
-                <!-- <span class="download_icon"><img src="./download_icon.webp" alt=""></span> -->
+                <div class="cloud" id="imgCloud">
+                    <img src="./cloud_2.png" alt="Cloud Image" class="cloud_img">
+                    <img src="./arrow_2.png" alt="Arrow Image" class="cloud_arrow"
+                        id="imgArrow">
+                </div>
             </div>
+            
         </div>
 
         <div class="steps">
@@ -68,8 +73,9 @@
     </div>
     <script>
         setTimeout(() => {
-            document.getElementById("loadingImg").src = "./download_icon.webp";
-            document.getElementById("loadingImg").style.cssText = "width: 50px; height: 50px; margin-right: -5px";
+            document.getElementById("imgCloud").style.cssText = "display: flex";
+            document.getElementById("loadingImg").style.cssText = "display: none";
+            // document.getElementById("loadingImg").style.cssText = "width: 55px; height: 45px; margin-right: -5px";
         }, 4500);
     </script>
 </body>

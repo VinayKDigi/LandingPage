@@ -48,7 +48,7 @@ body {
     border-radius: 20px;
 }
 
-.lang-box .active{
+.lang-box .active {
     color: #000;
     /* background-color: #fff; */
     font-weight: bold;
@@ -72,10 +72,11 @@ body {
 
 .circle {
     width: 170px;
-    height: 170px;
+    height: 173px;
     background-color: #fff;
     color: #0e857a;
     border-radius: 50%;
+    border: 10px solid #51b7aa;
     font-size: 10px;
     display: flex;
     justify-content: center;
@@ -83,21 +84,20 @@ body {
     position: relative;
 }
 
-.circle img{
+.circle img {
     max-width: 100%;
     scale: 2.5;
-    margin: auto -10px auto -3px;
+    margin: auto -10px auto 0px;
     border-radius: 50%;
 }
 
 
 
-.download_icon{
+.download_icon {
     position: absolute;
     max-width: 30px;
     bottom: 10px;
     right: -30px
-
 }
 
 /* Steps */
@@ -156,7 +156,7 @@ body {
 }
 
 /* Terms */
-.terms { 
+.terms {
     padding: 15px;
     border-radius: 10px;
     font-size: 10px;
@@ -170,30 +170,58 @@ body {
     margin-bottom: 10px;
 }
 
- 
+
 .pulse {
     animation: pulseAnim 1.8s infinite ease-in-out;
 }
 
 @keyframes pulseAnim {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
-    70% { transform: scale(1.03); box-shadow: 0 0 12px 6px rgba(255,255,255,0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    70% {
+        transform: scale(1.03);
+        box-shadow: 0 0 12px 6px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
 }
- 
+
 .heartbeat {
     animation: heartbeatAnim 1.4s ease-in-out infinite;
 }
 
 @keyframes heartbeatAnim {
-    0% { transform: scale(1); }
-    14% { transform: scale(1.05); }
-    28% { transform: scale(1); }
-    42% { transform: scale(1.05); }
-    70% { transform: scale(1); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    14% {
+        transform: scale(1.05);
+    }
+
+    28% {
+        transform: scale(1);
+    }
+
+    42% {
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
- 
+
 .number-input {
     width: 100%;
     padding: 12px;
@@ -213,21 +241,8 @@ body {
     border-radius: 6px;
     cursor: pointer;
 }
-
-
-/* Responsive */
-/* @media (max-width: 480px) {
-    .circle {
-        width: 80px;
-        height: 80px;
-        font-size: 35px;
-    }
-} */
-
-
-
-
-
+ 
+ 
 .field {
     position: relative;
     margin-bottom: 32px;
@@ -268,9 +283,9 @@ body {
     -webkit-animation: shake 3s;
     background-color: #f5f5f5;
     padding-right: 15px;
-    margin-top:3px;
-    margin-bottom:3px;
-    margin-left:3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 3px;
     height: 58px;
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -295,4 +310,44 @@ body {
     padding: 2px 8px;
     color: #dc2430;
     font-size: 14px;
+}
+
+.cloud {
+    width: 100px;
+    height: 100px;
+    /* overflow: hidden; */
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    align-items: center;
+    display: none;
+}
+
+.cloud .cloud_img {
+    max-width: 100%;
+    width: 55px;
+    margin: auto;
+}
+
+.cloud .cloud_arrow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 46px;
+    margin: auto;
+    z-index: 2;
+    animation: upDown 1.4s infinite ease-in-out;
+}
+
+/* @keyframes pulseArrow {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.85; }
+  100% { transform: scale(1); opacity: 1; }
+} */
+
+@keyframes upDown {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }
