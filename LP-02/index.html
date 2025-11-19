@@ -36,7 +36,19 @@
             <p><span class="step-num">2</span> Receive a PIN and access NOW!</p>
         </div>
 
-        <input type="text" class="number-input pulse" placeholder="971 xxxxxxxxx">
+        <div class="field">
+            <input class="field-input focus" type="tel" name="msisdn" maxlength="10" placeholder="--------"
+                autocomplete="tel-national">
+
+            <div class="field-input__prefix">
+                <svg class="field-icon" width="14" height="23" viewBox="0 0 14 23">
+                    <path d="M2 22.5C1.45 22.5 ..."></path>
+                </svg>
+                +971
+            </div>
+        </div>
+
+        <!-- <input type="text" class="number-input pulse" placeholder="971 xxxxxxxxx"> -->
         <button class="btn heartbeat">Continue</button>
 
         <p class="price-info">For 0.25 OMR / Day</p>
@@ -49,12 +61,12 @@
                 1) You will subscribe to MobileCafe service. Your subscription will be automatically renewed. <br>
                 2) This service is available for Omantel users at 0.25 OMR / Day <br>
                 3) To unsubscribe at any time, send UNSUB DD to 92143 <br>
-               
+
             </p>
         </div>
 
     </div>
-    <script> 
+    <script>
         setTimeout(() => {
             document.getElementById("loadingImg").src = "./download_icon.webp";
             document.getElementById("loadingImg").style.cssText = "width: 50px; height: 50px; margin-right: -5px";
