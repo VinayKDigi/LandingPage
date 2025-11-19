@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobileCafe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="top-bar">
+            <h3>MobileCafe</h3>
+
+            <div class="lang-box">
+                <span class="active">EN</span>
+                <span class="divider">|</span>
+                <span>AR</span>
+            </div>
+        </div>
+
+        <h2 class="title">Your content is Ready</h2>
+
+        <div class="icon-box">
+            <div class="circle">
+                <img id="loadingImg" src="./loading-up-to-100.gif" alt="" width="100" />
+                <!-- <span class="download_icon"><img src="./download_icon.webp" alt=""></span> -->
+            </div>
+        </div>
+
+        <div class="steps">
+            <p><span class="step-num">1</span> Enter your mobile number</p>
+            <p><span class="step-num">2</span> Receive a PIN and access NOW!</p>
+        </div>
+
+        <input type="text" class="number-input pulse" placeholder="971 xxxxxxxxx">
+        <button class="btn heartbeat">Continue</button>
+
+        <p class="price-info">Price for 2 Dirhams/Day +5% VAT (Daily Subscription)</p>
+
+        <div class="terms">
+            <h4>TERMS & CONDITIONS</h4>
+            <p>
+                By clicking on the above Continue button, you will agree to the below terms and conditions: <br><br>
+                1) No commitment, you can cancel your subscription any time by sending C STOP to 1111. <br>
+                2) You will be paid subscription after the free trial period automatically. <br>
+                3) Daily charges apply, operator wise. <br>
+                4) Enjoy your Free trial for 24 Hours. <br>
+                5) Please make sure that your browser is not using any (ad) block technology and you have a healthy
+                internet connection for swift access to the content.
+            </p>
+        </div>
+
+    </div>
+    <script> 
+        setTimeout(() => {
+            document.getElementById("loadingImg").src = "./download_icon.webp";
+            document.getElementById("loadingImg").style.cssText = "width: 50px; height: 50px; margin-right: -5px";
+        }, 4500);
+    </script>
+</body>
+
+</html>

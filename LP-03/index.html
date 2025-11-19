@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Two Page Loader</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= PAGE 1 (LOADER) ================= -->
+    <div id="page1">
+        <div class="loader-text">Wait a minute</div>
+
+        <div class="gear-box">
+            <img src="./setting-4446-256-unscreen.gif">
+        </div>
+
+        <div class="progress-text">
+            I edit the content in Greek.
+            <span id="percent" style="color:#fff; font-weight:bold;">0%</span>
+        </div>
+    </div>
+
+
+    <!-- ================= PAGE 2 (FORM) ================= -->
+    <div id="page2">
+
+        <h2 class="header-title">Everything you need, just one download away!</h2>
+
+        <div class="down-icon">
+            <img src="./download-4974_256.gif"> 
+            <span class="download-icon"><img src="./download.png"></span>
+        </div>
+
+        <div class="input-box">
+            <p style="font-size:16px; font-weight:bold;">
+                Enter your mobile number below to continue downloading your file.
+            </p>
+
+            <input type="text" placeholder="69">
+
+            <button class="submit-btn">CONTINUITY</button>
+        </div>
+        <div class="subscription-card">
+            <div class="card-header">
+                <span>Subscription Service Details</span>
+            </div>
+
+            <table class="card-table text-left">
+                <tr>
+                    <td class="left-title">Name</td>
+                    <td>PLAYZONE</td>
+                </tr>
+                <tr>
+                    <td class="left-title">Description</td>
+                    <td>Content Subscription Service</td>
+                </tr>
+                <tr>
+                    <td class="left-title">Charges</td>
+                    <td>
+                        €27.48/month, 12 SMS,<br>
+                        €2.29 each up to<br>
+                        48 SMS, €0.57
+                        <a href="#" class="link">Final Price with Taxes</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-title">Provider</td>
+                    <td>DATASMS</td>
+                </tr>
+                <tr>
+                    <td class="left-title">Unsubscribe</td>
+                    <td>
+                        Send STOP PZ to 54004 or 54444.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-title">Terms</td>
+                    <td>
+                        <a href="#" class="link">Terms of Use</a> &nbsp;
+                        <a href="#" class="link">Privacy Policy</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-title">Support</td>
+                    <td>2112348319, support@smsgreece.gr</td>
+                </tr>
+            </table>
+        </div>
+
+
+    </div>
+
+    <script>
+        let percent = 0;
+        const percentBox = document.getElementById("percent");
+
+        const interval = setInterval(() => {
+            percent++;
+            percentBox.innerText = percent + "%";
+
+            if (percent >= 100) {
+                clearInterval(interval);
+
+                // Hide page1 & show page2
+                document.getElementById("page1").style.display = "none";
+                document.getElementById("page2").style.display = "block";
+            }
+
+        }, 50); // speed of loading (lower = fast)
+    </script>
+
+</body>
+
+</html>
