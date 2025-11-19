@@ -14,7 +14,7 @@
 <body>
 
     <!-- ================= PAGE 1 (LOADER) ================= -->
-    <div id="page1">
+    <!-- <div id="page1">
         <div class="loader-text">Wait a minute</div>
 
         <div class="gear-box">
@@ -25,7 +25,7 @@
             I edit the content in Greek.
             <span id="percent" style="color:#fff; font-weight:bold;">0%</span>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- ================= PAGE 2 (FORM) ================= -->
@@ -34,7 +34,7 @@
         <h2 class="header-title">Everything you need, just one download away!</h2>
 
         <div class="down-icon">
-            <img src="./download-4974_256.gif"> 
+            <img src="./download-4974_256.gif">
             <span class="download-icon"><img src="./download.png"></span>
         </div>
 
@@ -43,10 +43,23 @@
                 Enter your mobile number below to continue downloading your file.
             </p>
 
-            <input type="text" placeholder="69">
+            <div class="field">
+                <input class="field-input focus" type="tel" name="msisdn" maxlength="10" placeholder="--------"
+                    autocomplete="tel-national">
 
-            <button class="submit-btn">CONTINUITY</button>
+                <div class="field-input__prefix">
+                    <svg class="field-icon" width="14" height="23" viewBox="0 0 14 23">
+                        <path d="M2 22.5C1.45 22.5 ..."></path>
+                    </svg>
+                    +48
+                </div>
+            </div>
+
+            <!-- <input type="text" placeholder="+48">
+
+            <button class="submit-btn">Continue</button> -->
         </div>
+
         <div class="subscription-card">
             <div class="card-header">
                 <span>Subscription Service Details</span>
@@ -55,7 +68,7 @@
             <table class="card-table text-left">
                 <tr>
                     <td class="left-title">Name</td>
-                    <td>PLAYZONE</td>
+                    <td>Beyond Health</td>
                 </tr>
                 <tr>
                     <td class="left-title">Description</td>
@@ -64,10 +77,7 @@
                 <tr>
                     <td class="left-title">Charges</td>
                     <td>
-                        €27.48/month, 12 SMS,<br>
-                        €2.29 each up to<br>
-                        48 SMS, €0.57
-                        <a href="#" class="link">Final Price with Taxes</a>
+                        6 PLN/Week
                     </td>
                 </tr>
                 <tr>
@@ -77,7 +87,8 @@
                 <tr>
                     <td class="left-title">Unsubscribe</td>
                     <td>
-                        Send STOP PZ to 54004 or 54444.
+                        STOP BH on 80708 (Orange) <br /> or 80425 (T-Mobile / Plus)<br /> or 191 (Play).
+
                     </td>
                 </tr>
                 <tr>
@@ -89,14 +100,14 @@
                 </tr>
                 <tr>
                     <td class="left-title">Support</td>
-                    <td>2112348319, support@smsgreece.gr</td>
+                    <td>support@digifish3.com</td>
                 </tr>
             </table>
         </div>
 
 
     </div>
-
+    <!-- 
     <script>
         let percent = 0;
         const percentBox = document.getElementById("percent");
@@ -107,14 +118,13 @@
 
             if (percent >= 100) {
                 clearInterval(interval);
-
-                // Hide page1 & show page2
-                document.getElementById("page1").style.display = "none";
+ 
+                // document.getElementById("page1").style.display = "none";
                 document.getElementById("page2").style.display = "block";
             }
 
-        }, 50); // speed of loading (lower = fast)
-    </script>
+        }, 0);  
+    </script> -->
 
 </body>
 
