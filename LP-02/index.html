@@ -19,7 +19,7 @@
             <div class="lang-box">
                 <span class="active" onclick="switchLang('en')">EN</span>
                 <span class="divider">|</span>
-                <span onclick="switchLang('pl')">PL</span>
+                <span onclick="switchLang('ar')">AR</span>
             </div>
         </div>
 
@@ -57,31 +57,32 @@
                 2) This service is available for Omantel users at 0.25 OMR / Day<br><br>
                 3) To unsubscribe at any time, send UNSUB DD to 92143<br>
             </p>
+
             <ul class="footer-menu">
-                <li> <a href="" title="">Terms & conditions</a></li>
-                <li> <a href="" title="">Privacy Policy</a></li>
-                <li> <a href="" title="">Contact us</a></li>
-                <li> <a href="" title="">Disclaimer</a></li>
+                <li><a href="">Terms & conditions</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="">Disclaimer</a></li>
             </ul>
         </div>
 
     </div>
 
 
-    <!-- POLISH PAGE -->
-    <div class="wrapper" id="page-pl" style="display:none">
+    <!-- ARABIC PAGE -->
+    <div class="wrapper" id="page-ar" style="display:none; direction:rtl; text-align:right;">
 
         <div class="top-bar">
-            <h3>MobileCafe</h3>
+            <h3>موبايل كافيه</h3>
 
             <div class="lang-box">
                 <span onclick="switchLang('en')">EN</span>
                 <span class="divider">|</span>
-                <span class="active" onclick="switchLang('pl')">PL</span>
+                <span class="active" onclick="switchLang('ar')">AR</span>
             </div>
         </div>
 
-        <h2 class="title">Twoja zawartość jest gotowa</h2>
+        <h2 class="title">محتواك جاهز الآن</h2>
 
         <div class="icon-box">
             <div class="circle">
@@ -94,8 +95,8 @@
         </div>
 
         <div class="steps">
-            <p><span class="step-num">1</span> Wprowadź swój numer telefonu</p>
-            <p><span class="step-num">2</span> Otrzymasz PIN i uzyskasz dostęp NATYCHMIAST!</p>
+            <p><span class="step-num">1</span> أدخل رقم هاتفك</p>
+            <p><span class="step-num">2</span> استلم رمز PIN وابدأ الآن!</p>
         </div>
 
         <div class="field">
@@ -103,24 +104,24 @@
             <div class="field-input__prefix">+971</div>
         </div>
 
-        <button class="btn heartbeat">Kontynuuj</button>
+        <button class="btn heartbeat">متابعة</button>
 
-        <p class="price-info">Za 0.25 OMR / dzień</p>
-        <p class="price-info">Otrzymasz kod PIN, aby potwierdzić subskrypcję.</p>
+        <p class="price-info">بسعر 0.25 ريال عماني يوميًا</p>
+        <p class="price-info">ستصلك رسالة PIN لتأكيد الاشتراك.</p>
 
         <div class="terms">
-            <h4>WARUNKI I ZASADY</h4>
+            <h4>الشروط والأحكام</h4>
             <p>
-                1) Klikając „Kontynuuj”, subskrybujesz usługę MobileCafe. Subskrypcja będzie automatycznie
-                odnawiana.<br><br>
-                2) Usługa dostępna dla użytkowników Omantel za 0.25 OMR dziennie.<br><br>
-                3) Aby anulować subskrypcję, wyślij SMS o treści UNSUB DD na numer 92143.<br>
+                1) بالضغط على متابعة، أنت تشترك في خدمة MobileCafe، وسيتم تجديدها تلقائياً.<br><br>
+                2) الخدمة متاحة لمستخدمي عمانتل مقابل 0.25 ريال عماني يومياً.<br><br>
+                3) لإلغاء الاشتراك، أرسل UNSUB DD إلى 92143.<br>
             </p>
+
             <ul class="footer-menu">
-                <li><a href="" title="">Regulamin</a></li>
-                <li><a href="" title="">Polityka prywatności</a></li>
-                <li><a href="" title="">Skontaktuj się z nami</a></li>
-                <li><a href="" title="">Zastrzeżenia</a></li>
+                <li><a href="">الشروط والأحكام</a></li>
+                <li><a href="">سياسة الخصوصية</a></li>
+                <li><a href="">اتصل بنا</a></li>
+                <li><a href="">إخلاء المسؤولية</a></li>
             </ul>
         </div>
 
@@ -141,14 +142,14 @@
 
         function switchLang(lang) {
             const enPage = document.getElementById("page-en");
-            const plPage = document.getElementById("page-pl");
+            const arPage = document.getElementById("page-ar");
 
-            if (lang === "pl") {
+            if (lang === "ar") {
                 enPage.style.display = "none";
-                plPage.style.display = "block";
+                arPage.style.display = "block";
             } else {
                 enPage.style.display = "block";
-                plPage.style.display = "none";
+                arPage.style.display = "none";
             }
         }
     </script>
