@@ -37,10 +37,9 @@
                     +48
                 </div>
             </div>
+            <button class="btn btn-hint" type="submit" disabled data-trans="btn-req">Subscribe Now</button>
 
-            <!-- <input type="text" placeholder="+48">
 
-            <button class="submit-btn">Continue</button> -->
         </div>
 
         <div class="subscription-card">
@@ -90,24 +89,18 @@
 
 
     </div>
-    <!-- 
     <script>
-        let percent = 0;
-        const percentBox = document.getElementById("percent");
+        const input = document.querySelector('.field-input');
+        const button = document.querySelector('.btn-hint');
 
-        const interval = setInterval(() => {
-            percent++;
-            percentBox.innerText = percent + "%";
-
-            if (percent >= 100) {
-                clearInterval(interval);
- 
-                // document.getElementById("page1").style.display = "none";
-                document.getElementById("page2").style.display = "block";
+        input.addEventListener('input', () => {
+            if (input.value.length === 10) {
+                button.removeAttribute('disabled');
+            } else {
+                button.setAttribute('disabled', true);
             }
-
-        }, 0);  
-    </script> -->
+        });
+    </script>
 
 </body>
 
