@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game of stones</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ================= ENGLISH PAGE ================= -->
+    <div id="page-en">
+
+        <div class="container">
+
+            <div class="top">
+                <div class="menu-icon">☰</div>
+                <div class="title">
+                    Subscribe to <span class="theme-color">Game Of Stones</span>
+                </div>
+                <div></div>
+            </div>
+
+            <div class="steps">
+                <div>Step 1/2</div>
+                <div class="d-none">Step 2/2</div>
+                <div class="step"></div>
+                <div class="step"></div>
+            </div>
+
+            <h1 class="heading">
+                Continue To <span class="theme-color">Play Now</span>
+            </h1>
+
+            <div class="controller">
+                <img src="download_icon.png" alt="Game Controller" width="300">
+            </div>
+
+            <form class="form-en">
+
+                <div class="label">
+                    Enter your mobile number <br> you'll receive a PIN
+                </div>
+
+                <div class="field">
+                    <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="--------">
+                    <div class="field-input__prefix">+973</div>
+                </div>
+
+                <!-- OTP will be inserted here -->
+                <div class="otp-box-en"></div>
+
+                <button class="btn btn-hint btn-en" type="button" disabled>
+                    Continue
+                </button>
+
+                <div class="my-3">Free for 24hrs</div>
+
+                <div style="color:#050505;margin-top:20px;font-size:10px">Disclaimer</div>
+
+            </form>
+
+            <footer class="footer note" style="color:#bebebe;margin-top:20px;font-size:8px">
+                The subscription cost for Zain subscribers is 0.2 BHD/day renewed automatically.
+                You may unsubscribe at any time at my.sla-digital.com or by sending `UNSUB GOS` to 94005.
+                For support contact support@digifish3.com
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                // when mobile is filled 10 digits → replace input
+                if (mobileInput.value.length === 10) {
+
+                    // Replace mobile field with OTP field
+                    form.innerHTML = `
+
+                <div class="field">
+                    <input class="field-input otp-input" style="padding: 0 38px 0 38px; text-align:center" type="tel" maxlength="4" placeholder="••••">
+                </div>
+
+                <button class="btn btn-hint btn-en" type="button">Verify OTP</button>
+            `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+
+    </script>
+
+
+</body>
+
+</html>

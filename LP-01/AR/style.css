@@ -374,11 +374,7 @@ body {
         border-radius: 15px;
         padding: 20px;
     }
-}
-
-
-
-
+} 
 
 .lang-toggle {
     background: #000;
@@ -390,12 +386,8 @@ body {
     border: none;
 }
 
-#page-en {
-    display: block;
-}
 
-#page-ar {
-    display: none;
+#page-ar { 
     direction: rtl;
     text-align: right;
 }

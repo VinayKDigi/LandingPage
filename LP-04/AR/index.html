@@ -10,13 +10,7 @@
 
 <body>
     <div class="bg"></div>
-    <div class="wrapper">
-        <div class="lang-switch">
-            <select>
-                <option value="en">English</option>
-                <!-- <option value="pl">Polski</option> -->
-            </select>
-        </div>
+    <div class="wrapper"> 
         <header class="header">
             <div class="logo logo-center">
                 <img src="./BH-logo.png" alt="Beyond Health Logo" width="320" />
@@ -29,30 +23,26 @@
             </p>
             <h6 class="descpription">
                 <span lng-a="" class="visible">Price incl. VAT + data transmission
-                    cost</span> 
+                    cost</span>
             </h6>
         </header>
 
 
+        <form class="form-en form-area">
+            <label>أدخل رقم هاتفك لاستلام رمز التحقق:</label>
 
-        <form class="form-area">
-            <label>Enter your mobile number to receive OTP:</label>
-
-            <div class="phone-field">
-                <input type="tel" placeholder="05" required />
+            <div class="phone-field field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="05">
             </div>
 
-            <button type="submit" class="submit-btn">
+            <div class="otp-box-en"></div>
+
+            <button class="btn  btn-en submit-btn" type="button" disabled>
                 <span>
-                    << </span> Subscribe Now <span> >> </span>
+                    << </span> اشترك الآن <span> >> </span>
             </button>
-
-            <!-- <p class="tos">
-                By completing this form, you accept the
-                <a href="#">Terms of Service</a>
-            </p> -->
-
         </form>
+
         <div class="d-flex flex-column align-items-center">
             <div class="my-3 mob-logo-hide">
                 <a id="Linko2" href="https://boobics.com">
@@ -73,7 +63,7 @@
                     VAT Tax was already paid with refill card for prepaid subscribers and To Cancel your subscription
                     send U 3 to 763208.
                 </p>
-                 
+
             </div>
             <div class="copyright">
                 <div class="container">
@@ -88,18 +78,45 @@
                                     <li><a href=" ">Contact</a></li>
                                     <li><a href=" ">Disclaimer</a></li>
                                 </ul>
-                                
+
                             </div>
                         </div>
                     </div><!-- Row end -->
                 </div>
                 <!-- Container end -->
             </div>
-           
+
         </div>
 
     </div>
 
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                // when mobile is filled 10 digits → replace input
+                if (mobileInput.value.length === 10) {
+
+                    // Replace mobile field with OTP field
+                    form.innerHTML = `
+
+                <div class="field phone-field">
+                    <input class="field-input mobile-en otp-input" style="text-align:center" type="tel" maxlength="4" placeholder="••••">
+                </div>
+
+                <button class="btn btn-en submit-btn" type="button">تحقق من رمز التحقق</button>
+            `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
 </body>
 
 </html>

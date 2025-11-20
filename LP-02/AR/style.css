@@ -371,7 +371,6 @@ body {
 }
 
 #page-ar {
-    display: none;
     direction: rtl;
     text-align: right;
 }

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobileCafe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="wrapper" id="page-ar" style="direction: rtl; text-align: right;">
+
+        <div class="top-bar">
+            <h3>موبايل كافيه</h3>
+        </div>
+
+        <h2 class="title">محتواك جاهز الآن</h2>
+
+        <div class="icon-box">
+            <div class="circle">
+                <img id="loadingImg2" src="./loading-up-to-100.gif" width="100" />
+                <div class="cloud" id="imgCloud2">
+                    <img src="./cloud_2.png" class="cloud_img">
+                    <img src="./arrow_2.png" class="cloud_arrow">
+                </div>
+            </div>
+        </div>
+
+        <div class="steps">
+            <p><span class="step-num">1</span> أدخل رقم هاتفك</p>
+            <p><span class="step-num">2</span> استلم رمز PIN وابدأ الآن!</p>
+        </div>
+
+        <form class="form-en">
+
+            <div class="field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="--------">
+                <div class="field-input__prefix">+971</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn btn-hint btn-en" type="button" disabled>
+                تابع
+            </button>
+        </form>
+
+        <p class="price-info">بسعر 0.25 ريال عماني يوميًا</p>
+        <p class="price-info">ستصلك رسالة PIN لتأكيد الاشتراك.</p>
+
+        <div class="terms">
+            <h4>الشروط والأحكام</h4>
+            <p>
+                1) بالضغط على متابعة، أنت تشترك في خدمة MobileCafe، وسيتم تجديدها تلقائياً.<br><br>
+                2) الخدمة متاحة لمستخدمي عمانتل مقابل 0.25 ريال عماني يومياً.<br><br>
+                3) لإلغاء الاشتراك، أرسل UNSUB DD إلى 92143.<br>
+            </p>
+
+            <ul class="footer-menu">
+                <li><a href="">الشروط والأحكام</a></li>
+                <li><a href="">سياسة الخصوصية</a></li>
+                <li><a href="">اتصل بنا</a></li>
+                <li><a href="">إخلاء المسؤولية</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script>
+        // CLOUD ANIMATION
+        setTimeout(() => {
+            document.getElementById("imgCloud2").style.display = "flex";
+            document.getElementById("loadingImg2").style.display = "none";
+        }, 4500);
+
+         function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                // when mobile is filled 10 digits → replace input
+                if (mobileInput.value.length === 10) {
+
+                    // Replace mobile field with OTP field
+                    form.innerHTML = ` 
+
+                    <div class="field">
+                        <input class="field-input otp-input" style="padding: 0 38px 0 38px; text-align:center" type="tel" maxlength="4" placeholder="••••">
+                    </div>
+
+                    <button class="btn btn-hint btn-en" type="button">تحقق من رمز التحقق</button>
+                `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+
+</body>
+
+</html>

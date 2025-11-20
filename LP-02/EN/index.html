@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobileCafe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ENGLISH PAGE -->
+    <div class="wrapper" id="page-en">
+
+        <div class="top-bar">
+            <h3>MobileCafe</h3>
+
+        </div>
+
+        <h2 class="title">Your content is Ready</h2>
+
+        <div class="icon-box">
+            <div class="circle">
+                <img id="loadingImg" src="./loading-up-to-100.gif" width="100" />
+                <div class="cloud" id="imgCloud">
+                    <img src="./cloud_2.png" class="cloud_img">
+                    <img src="./arrow_2.png" class="cloud_arrow">
+                </div>
+            </div>
+        </div>
+
+        <div class="steps">
+            <p><span class="step-num">1</span> Enter your mobile number</p>
+            <p><span class="step-num">2</span> Receive a PIN and access NOW!</p>
+        </div>
+
+
+        <form class="form-en">
+
+            <div class="field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="--------">
+                <div class="field-input__prefix">+971</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn btn-hint btn-en heartbeat" type="button" disabled>
+                Continue
+            </button>
+
+
+        </form>
+
+        <!-- MOBILE INPUT BOX -->
+
+        <p class="price-info">For 0.25 OMR / Day</p>
+        <p class="price-info">You will receive a PIN to confirm your subscription.</p>
+
+        <div class="terms">
+            <h4>TERMS & CONDITIONS</h4>
+            <p>
+                1) You will subscribe to MobileCafe service. Your subscription will auto-renew.<br><br>
+                2) This service is available for Omantel users at 0.25 OMR / Day<br><br>
+                3) To unsubscribe at any time, send UNSUB DD to 92143<br>
+            </p>
+
+            <ul class="footer-menu">
+                <li><a href="">Terms & conditions</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="">Disclaimer</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        // ANIMATION
+        setTimeout(() => {
+            document.getElementById("imgCloud").style.display = "flex";
+            document.getElementById("loadingImg").style.display = "none";
+        }, 4500);
+
+
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                // when mobile is filled 10 digits → replace input
+                if (mobileInput.value.length === 10) {
+
+                    // Replace mobile field with OTP field
+                    form.innerHTML = `
+
+                <div class="field">
+                    <input class="field-input otp-input" style="padding: 0 38px 0 38px; text-align:center" type="tel" maxlength="4" placeholder="••••">
+                </div>
+
+                <button class="btn btn-hint btn-en" type="button">Verify OTP</button>
+            `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+
+    </script>
+
+</body>
+
+</html>
