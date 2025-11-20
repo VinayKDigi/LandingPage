@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Beyond Health</title>
     <link rel="stylesheet" href="style.css" />
- 
+
 </head>
 
 <body>
- 
+
     <button class="lang-toggle" onclick="toggleLang()">AR</button>
- 
+
     <div id="page2-en" class="page2">
 
         <h2 class="header-title">Everything you need, just one download away!</h2>
@@ -75,6 +75,8 @@
                     <td>
                         <a href="#" class="link">Terms of Use</a> &nbsp;
                         <a href="#" class="link">Privacy Policy</a>
+                        <a href="#" class="link">Contact us </a>
+                        <a href="#" class="link">Disclaimer</a>
                     </td>
                 </tr>
                 <tr>
@@ -85,7 +87,7 @@
         </div>
 
     </div>
-  
+
     <div id="page2-ar" class="page2">
 
         <h2 class="header-title">كل ما تحتاجه، فقط تحميل واحد!</h2>
@@ -142,8 +144,10 @@
                 <tr>
                     <td class="left-title">الشروط</td>
                     <td>
-                        <a href="#" class="link">شروط الاستخدام</a> &nbsp;
-                        <a href="#" class="link">سياسة الخصوصية</a>
+                        <a href="#" class="link">شروط الاستخدام</a> &nbsp;  &nbsp;
+                        <a href="#" class="link">سياسة الخصوصية</a> &nbsp;  &nbsp;
+                        <a href="#" class="link">اتصل بنا</a> &nbsp; &nbsp;
+                        <a href="#" class="link">إخلاء المسؤولية</a>
                     </td>
                 </tr>
                 <tr>
@@ -155,7 +159,7 @@
 
     </div>
 
-    <script> 
+    <script>
         const inputs = document.querySelectorAll('.field-input');
         const buttons = document.querySelectorAll('.btn-hint');
 
@@ -168,7 +172,7 @@
                 }
             });
         });
- 
+
         function toggleLang() {
             const en = document.getElementById("page2-en");
             const ar = document.getElementById("page2-ar");

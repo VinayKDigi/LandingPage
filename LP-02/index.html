@@ -6,16 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MobileCafe</title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* Toggle UI */
-       
-    </style>
 </head>
 
 <body>
 
-  
+    <!-- ENGLISH PAGE -->
     <div class="wrapper" id="page-en">
 
         <div class="top-bar">
@@ -24,7 +19,7 @@
             <div class="lang-box">
                 <span class="active" onclick="switchLang('en')">EN</span>
                 <span class="divider">|</span>
-                <span onclick="switchLang('ar')">AR</span>
+                <span onclick="switchLang('pl')">PL</span>
             </div>
         </div>
 
@@ -32,10 +27,10 @@
 
         <div class="icon-box">
             <div class="circle">
-                <img id="loadingImg" src="./loading-up-to-100.gif" alt="" width="100" />
+                <img id="loadingImg" src="./loading-up-to-100.gif" width="100" />
                 <div class="cloud" id="imgCloud">
-                    <img src="./cloud_2.png" alt="Cloud Image" class="cloud_img">
-                    <img src="./arrow_2.png" alt="Arrow Image" class="cloud_arrow" id="imgArrow">
+                    <img src="./cloud_2.png" class="cloud_img">
+                    <img src="./arrow_2.png" class="cloud_arrow">
                 </div>
             </div>
         </div>
@@ -62,27 +57,35 @@
                 2) This service is available for Omantel users at 0.25 OMR / Day<br><br>
                 3) To unsubscribe at any time, send UNSUB DD to 92143<br>
             </p>
+            <ul class="footer-menu">
+                <li> <a href="" title="">Terms & conditions</a></li>
+                <li> <a href="" title="">Privacy Policy</a></li>
+                <li> <a href="" title="">Contact us</a></li>
+                <li> <a href="" title="">Disclaimer</a></li>
+            </ul>
         </div>
 
     </div>
- 
-    <div class="wrapper" id="page-ar">
+
+
+    <!-- POLISH PAGE -->
+    <div class="wrapper" id="page-pl" style="display:none">
 
         <div class="top-bar">
-            <h3>موبايل كافيه</h3>
+            <h3>MobileCafe</h3>
 
             <div class="lang-box">
                 <span onclick="switchLang('en')">EN</span>
                 <span class="divider">|</span>
-                <span class="active" onclick="switchLang('ar')">AR</span>
+                <span class="active" onclick="switchLang('pl')">PL</span>
             </div>
         </div>
 
-        <h2 class="title">محتواك جاهز الآن</h2>
+        <h2 class="title">Twoja zawartość jest gotowa</h2>
 
         <div class="icon-box">
             <div class="circle">
-                <img id="loadingImg2" src="./loading-up-to-100.gif" alt="" width="100" />
+                <img id="loadingImg2" src="./loading-up-to-100.gif" width="100" />
                 <div class="cloud" id="imgCloud2">
                     <img src="./cloud_2.png" class="cloud_img">
                     <img src="./arrow_2.png" class="cloud_arrow">
@@ -91,8 +94,8 @@
         </div>
 
         <div class="steps">
-            <p><span class="step-num">1</span> أدخل رقم هاتفك</p>
-            <p><span class="step-num">2</span> استلم رمز PIN وابدأ الآن!</p>
+            <p><span class="step-num">1</span> Wprowadź swój numer telefonu</p>
+            <p><span class="step-num">2</span> Otrzymasz PIN i uzyskasz dostęp NATYCHMIAST!</p>
         </div>
 
         <div class="field">
@@ -100,62 +103,52 @@
             <div class="field-input__prefix">+971</div>
         </div>
 
-        <button class="btn heartbeat">متابعة</button>
+        <button class="btn heartbeat">Kontynuuj</button>
 
-        <p class="price-info">بسعر 0.25 ريال عماني يوميًا</p>
-        <p class="price-info">ستصلك رسالة PIN لتأكيد الاشتراك.</p>
+        <p class="price-info">Za 0.25 OMR / dzień</p>
+        <p class="price-info">Otrzymasz kod PIN, aby potwierdzić subskrypcję.</p>
 
         <div class="terms">
-            <h4>الشروط والأحكام</h4>
+            <h4>WARUNKI I ZASADY</h4>
             <p>
-                1) بالضغط على متابعة أنت توافق على الاشتراك في خدمة MobileCafe، ويتم تجديدها تلقائيًا.<br><br>
-                2) الخدمة متاحة لمستخدمي عمانتل بسعر 0.25 ريال عماني يوميًا.<br><br>
-                3) لإلغاء الاشتراك أرسل UNSUB DD إلى 92143.<br>
+                1) Klikając „Kontynuuj”, subskrybujesz usługę MobileCafe. Subskrypcja będzie automatycznie
+                odnawiana.<br><br>
+                2) Usługa dostępna dla użytkowników Omantel za 0.25 OMR dziennie.<br><br>
+                3) Aby anulować subskrypcję, wyślij SMS o treści UNSUB DD na numer 92143.<br>
             </p>
+            <ul class="footer-menu">
+                <li><a href="" title="">Regulamin</a></li>
+                <li><a href="" title="">Polityka prywatności</a></li>
+                <li><a href="" title="">Skontaktuj się z nami</a></li>
+                <li><a href="" title="">Zastrzeżenia</a></li>
+            </ul>
         </div>
 
     </div>
 
 
-    <script> 
+    <!-- SCRIPT -->
+    <script>
         setTimeout(() => {
             document.getElementById("imgCloud").style.display = "flex";
             document.getElementById("loadingImg").style.display = "none";
         }, 4500);
- 
+
         setTimeout(() => {
             document.getElementById("imgCloud2").style.display = "flex";
             document.getElementById("loadingImg2").style.display = "none";
         }, 4500);
- 
+
         function switchLang(lang) {
             const enPage = document.getElementById("page-en");
-            const arPage = document.getElementById("page-ar");
+            const plPage = document.getElementById("page-pl");
 
-            const enBtn = enPage.querySelector(".lang-box span:first-child");
-            const arBtn = enPage.querySelector(".lang-box span:last-child");
-
-            const enBtn2 = arPage.querySelector(".lang-box span:first-child");
-            const arBtn2 = arPage.querySelector(".lang-box span:last-child");
-
-            if (lang === "ar") {
+            if (lang === "pl") {
                 enPage.style.display = "none";
-                arPage.style.display = "block";
-
-                enBtn.classList.remove("active");
-                arBtn.classList.add("active");
-
-                enBtn2.classList.remove("active");
-                arBtn2.classList.add("active");
+                plPage.style.display = "block";
             } else {
                 enPage.style.display = "block";
-                arPage.style.display = "none";
-
-                enBtn.classList.add("active");
-                arBtn.classList.remove("active");
-
-                enBtn2.classList.add("active");
-                arBtn2.classList.remove("active");
+                plPage.style.display = "none";
             }
         }
     </script>
