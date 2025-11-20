@@ -6,75 +6,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gamestation</title>
     <link rel="stylesheet" href="style.css" />
+
 </head>
 
 <body>
 
-    <div class="container">
 
-        <div class="top">
-            <div class="menu-icon">☰</div>
-            <div class="title">Subscribe to <span class="theme-color">Game Of Stones</span></div>
-            <div class="lang">EN</div>
-        </div>
 
-        <div class="steps">
-            <div data-trans="step-1">Step 1/2</div>
-            <div class="d-none" data-trans="step-2">Step 2/2</div>
-            <div class="step"></div>
-            <div class="step"></div>
-        </div>
 
-        <h1 class="heading">Continue To <span class="theme-color">Play Now</span></h1>
+    <div id="page-en">
 
-        <div class="controller">
-            <img src="download_icon.png" alt="Game Controller" width="300">
-        </div>
+        <div class="container">
 
-        <form data-pin-req="">
-            <div class="label" data-trans="form-req-title">Enter your mobile number <br>you'll receive a PIN</div>
-            <div class="field">
-                <input class="field-input focus" type="tel" name="msisdn" maxlength="10" placeholder="--------"
-                    autocomplete="tel-national">
-
-                <div class="field-input__prefix">
-                    <svg class="field-icon" width="14" height="23" viewBox="0 0 14 23">
-                        <path d="M2 22.5C1.45 22.5 ..."></path>
-                    </svg>
-                    +973
+            <div class="top">
+                <div class="menu-icon">☰</div>
+                <div class="title">
+                    Subscribe to <span class="theme-color">Game Of Stones</span>
                 </div>
+                <button class="lang-toggle" onclick="toggleLang()">
+                    AR
+                </button>
             </div>
 
-            <button class="btn btn-hint" type="submit" disabled data-trans="btn-req">Continue</button>
-
-            <div class="my-3">
-                Free for 24hrs
+            <div class="steps">
+                <div data-trans="step-1">Step 1/2</div>
+                <div class="d-none" data-trans="step-2">Step 2/2</div>
+                <div class="step"></div>
+                <div class="step"></div>
             </div>
-            <div style="display:block;color:#050505;margin-top:20px;font-size:10px" data-trans="below_cta">
-                Disclaimer
+
+            <h1 class="heading">
+                Continue To <span class="theme-color">Play Now</span>
+            </h1>
+
+            <div class="controller">
+                <img src="download_icon.png" alt="Game Controller" width="300">
             </div>
-        </form>
 
+            <form data-pin-req="">
+                <div class="label" data-trans="form-req-title">
+                    Enter your mobile number <br> you'll receive a PIN
+                </div>
 
+                <div class="field">
+                    <input class="field-input focus" type="tel" name="msisdn" maxlength="10" placeholder="--------"
+                        autocomplete="tel-national">
 
-        <footer class="footer note" style="display:block;color:#bebebe;margin-top:20px;font-size:8px">
-            The subscription cost for Zain subscribers is 0.2 BHD/day renewed automatically.
-            You may unsubscribe at any time at: my.sla-digital.com, or by sending `UNSUB GOS` to 94005
-            For support please contact support@digifish3.com
-        </footer>
+                    <div class="field-input__prefix">
+                        +973
+                    </div>
+                </div>
+
+                <button class="btn btn-hint" type="submit" disabled>Continue</button>
+
+                <div class="my-3">Free for 24hrs</div>
+
+                <div style="color:#050505;margin-top:20px;font-size:10px">
+                    Disclaimer
+                </div>
+            </form>
+
+            <footer class="footer note" style="color:#bebebe;margin-top:20px;font-size:8px">
+                The subscription cost for Zain subscribers is 0.2 BHD/day renewed automatically.
+                You may unsubscribe at any time at: my.sla-digital.com, or by sending `UNSUB GOS` to 94005
+                For support please contact support@digifish3.com
+            </footer>
+        </div>
 
     </div>
-    <script>
-        const input = document.querySelector('.field-input');
-        const button = document.querySelector('.btn-hint');
+ 
+    <div id="page-ar">
 
-        input.addEventListener('input', () => {
-            if (input.value.length === 10) {
-                button.removeAttribute('disabled');
-            } else {
-                button.setAttribute('disabled', true);
-            }
+        <div class="container">
+
+            <div class="top">
+                <div class="menu-icon">☰</div>
+                <div class="title">
+                    اشترك في <span class="theme-color">لعبة الحجارة</span>
+                </div>
+                <button class="lang-toggle" onclick="toggleLang()">
+                    EN
+                </button>
+            </div>
+
+            <div class="steps">
+                <div>الخطوة 1/2</div>
+                <div class="d-none">الخطوة 2/2</div>
+                <div class="step"></div>
+                <div class="step"></div>
+            </div>
+
+            <h1 class="heading">
+                تابع <span class="theme-color">اللعب الآن</span>
+            </h1>
+
+            <div class="controller">
+                <img src="download_icon.png" alt="Game Controller" width="300">
+            </div>
+
+            <form>
+                <div class="label">
+                    أدخل رقم هاتفك <br> ستصلك شفرة PIN
+                </div>
+
+                <div class="field">
+                    <input class="field-input focus" type="tel" maxlength="10" placeholder="--------">
+
+                    <div class="field-input__prefix">
+                        +973
+                    </div>
+                </div>
+
+                <button class="btn btn-hint" type="submit" disabled>متابعة</button>
+
+                <div class="my-3">مجاني لمدة 24 ساعة</div>
+
+                <div style="color:#050505;margin-top:20px;font-size:10px">
+                    تنبيه
+                </div>
+            </form>
+
+            <footer class="footer note" style="color:#bebebe;margin-top:20px;font-size:8px">
+                تكلفة الاشتراك لمستخدمي زين هي 0.2 دينار بحريني يوميًا يتم تجديدها تلقائيًا.
+                يمكنك إلغاء الاشتراك في أي وقت عبر my.sla-digital.com أو بإرسال `UNSUB GOS` إلى 94005
+                للدعم يرجى التواصل عبر support@digifish3.com
+            </footer>
+        </div>
+
+    </div>
+
+
+    <script>
+        // Enable button when input is valid
+        const inputs = document.querySelectorAll(".field-input");
+        const buttons = document.querySelectorAll(".btn-hint");
+
+        inputs.forEach((input, i) => {
+            input.addEventListener("input", () => {
+                if (input.value.length === 10) {
+                    buttons[i].removeAttribute("disabled");
+                } else {
+                    buttons[i].setAttribute("disabled", true);
+                }
+            });
         });
+
+        // ------------------------------
+        // LANGUAGE TOGGLE FUNCTION
+        // ------------------------------
+        function toggleLang() {
+            const en = document.getElementById("page-en");
+            const ar = document.getElementById("page-ar");
+            const btn = document.querySelector(".lang-toggle");
+
+            if (en.style.display !== "none") {
+                en.style.display = "none";
+                ar.style.display = "block";
+                btn.textContent = "EN";
+            } else {
+                en.style.display = "block";
+                ar.style.display = "none";
+                btn.textContent = "AR";
+            }
+        }
     </script>
 
 </body>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beyond Health</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body> 
+    <div id="page2">
+
+        <h2 class="header-title">Everything you need, just one download away!</h2>
+
+        <div class="down-icon">
+            <img src="./download-4974_256.gif">
+            <span class="download-icon"><img src="./download.png"></span>
+        </div>
+
+        <div class="input-box">
+            <p style="font-size:16px; font-weight:bold;">
+                Enter your mobile number below to continue downloading your file.
+            </p>
+
+            <div class="field">
+                <input class="field-input focus" type="tel" name="msisdn" maxlength="10" placeholder="--------"
+                    autocomplete="tel-national">
+
+                <div class="field-input__prefix">
+                    <svg class="field-icon" width="14" height="23" viewBox="0 0 14 23">
+                        <path d="M2 22.5C1.45 22.5 ..."></path>
+                    </svg>
+                    +48
+                </div>
+            </div>
+            <button class="btn btn-hint" type="submit" disabled data-trans="btn-req">Subscribe Now</button>
+
+
+        </div>
+
+        <div class="subscription-card">
+            <div class="card-header">
+                <span>Subscription Service Details</span>
+            </div>
+
+            <table class="card-table text-left">
+                <tr>
+                    <td class="left-title">Name</td>
+                    <td>Beyond Health</td>
+                </tr>
+                <tr>
+                    <td class="left-title">Description</td>
+                    <td>Content Subscription Service</td>
+                </tr>
+                <tr>
+                    <td class="left-title">Charges</td>
+                    <td>
+                        6 PLN/Week
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-title">Provider</td>
+                    <td>DATASMS</td>
+                </tr>
+                <tr>
+                    <td class="left-title">Unsubscribe</td>
+                    <td>
+                        STOP BH on 80708 (Orange) <br /> or 80425 (T-Mobile / Plus)<br /> or 191 (Play).
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-title">Terms</td>
+                    <td>
+                        <a href="#" class="link">Terms of Use</a> &nbsp;
+                        <a href="#" class="link">Privacy Policy</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-title">Support</td>
+                    <td>support@digifish3.com</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        const input = document.querySelector('.field-input');
+        const button = document.querySelector('.btn-hint');
+
+        input.addEventListener('input', () => {
+            if (input.value.length === 10) {
+                button.removeAttribute('disabled');
+            } else {
+                button.setAttribute('disabled', true);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

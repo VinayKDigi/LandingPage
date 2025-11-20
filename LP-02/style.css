@@ -241,8 +241,8 @@ body {
     border-radius: 6px;
     cursor: pointer;
 }
- 
- 
+
+
 .field {
     position: relative;
     margin-bottom: 32px;
@@ -314,7 +314,7 @@ body {
 
 .cloud {
     width: 100px;
-    height: 100px; 
+    height: 100px;
     margin: auto;
     text-align: center;
     position: absolute;
@@ -346,7 +346,32 @@ body {
 } */
 
 @keyframes upDown {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+.lang-box span {
+    cursor: pointer;
+}
+
+.lang-box .active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#page-ar {
+    display: none;
+    direction: rtl;
+    text-align: right;
 }

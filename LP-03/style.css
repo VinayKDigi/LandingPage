@@ -6,7 +6,7 @@
  }
 
  /* ---------------- PAGE 1 ---------------- */
- #page1 {
+ .page1 {
      height: 100vh;
      display: flex;
      flex-direction: column;
@@ -43,7 +43,7 @@
  }
 
  /* ---------------- PAGE 2 ---------------- */
- #page2 {
+ .page2 {
      /* display: none; */
      padding: 30px 15px;
      text-align: center;
@@ -226,6 +226,7 @@
  .down-icon {
      position: relative;
      overflow: hidden;
+     text-align: center;
  }
 
  .down-icon>img {
@@ -334,3 +335,28 @@
      color: #dc2430;
      font-size: 14px;
  }
+
+
+
+  .lang-toggle {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: #000;
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            border: none;
+        }
+
+        #page2-ar {
+            display: none;
+            direction: rtl;
+            text-align: right;
+        }
+ 
+        #page2-en {
+            direction: ltr;
+        }

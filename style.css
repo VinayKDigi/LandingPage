@@ -28,8 +28,9 @@ body {
     margin-bottom: 15px;
 }
 
-.title{
+.title {
     font-size: 12px;
+    text-align: center;
 }
 
 /* PROGRESS SECTION */
@@ -104,24 +105,25 @@ body {
     font-weight: 900;
     margin-bottom: 10px;
 }
- 
+
 .controller img {
     width: 80%;
     max-width: 220px;
     min-width: 140px;
     margin: 5px auto;
 }
- 
-.my-3{
+
+.my-3 {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
 .subtext {
     color: #666;
     margin-top: 10px;
     font-size: clamp(14px, 3.5vw, 16px);
 }
- 
+
 .input-box {
     position: relative;
     width: 100%;
@@ -232,9 +234,9 @@ body {
     -webkit-animation: shake 3s;
     background-color: #f5f5f5;
     padding-right: 15px;
-    margin-top:3px;
-    margin-bottom:3px;
-    margin-left:3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 3px;
     height: 58px;
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -347,7 +349,7 @@ body {
 
 
 .theme-color {
-    color:#dc2430;
+    color: #dc2430;
     font-weight: bold;
 }
 
@@ -372,4 +374,34 @@ body {
         border-radius: 15px;
         padding: 20px;
     }
+}
+
+
+
+
+
+.lang-toggle {
+    background: #000;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    border: none;
+}
+
+#page-en {
+    display: block;
+}
+
+#page-ar {
+    display: none;
+    direction: rtl;
+    text-align: right;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
 }

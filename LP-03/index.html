@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Beyond Health</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-
-    </style>
+ 
 </head>
 
-<body> 
-    <div id="page2">
+<body>
+ 
+    <button class="lang-toggle" onclick="toggleLang()">AR</button>
+ 
+    <div id="page2-en" class="page2">
 
         <h2 class="header-title">Everything you need, just one download away!</h2>
 
@@ -37,9 +38,8 @@
                     +48
                 </div>
             </div>
-            <button class="btn btn-hint" type="submit" disabled data-trans="btn-req">Subscribe Now</button>
 
-
+            <button class="btn btn-hint" type="submit" disabled>Subscribe Now</button>
         </div>
 
         <div class="subscription-card">
@@ -58,9 +58,7 @@
                 </tr>
                 <tr>
                     <td class="left-title">Charges</td>
-                    <td>
-                        6 PLN/Week
-                    </td>
+                    <td>6 PLN/Week</td>
                 </tr>
                 <tr>
                     <td class="left-title">Provider</td>
@@ -70,7 +68,6 @@
                     <td class="left-title">Unsubscribe</td>
                     <td>
                         STOP BH on 80708 (Orange) <br /> or 80425 (T-Mobile / Plus)<br /> or 191 (Play).
-
                     </td>
                 </tr>
                 <tr>
@@ -87,19 +84,106 @@
             </table>
         </div>
 
+    </div>
+  
+    <div id="page2-ar" class="page2">
+
+        <h2 class="header-title">كل ما تحتاجه، فقط تحميل واحد!</h2>
+
+        <div class="down-icon">
+            <img src="./download-4974_256.gif">
+            <span class="download-icon"><img src="./download.png"></span>
+        </div>
+
+        <div class="input-box">
+            <p style="font-size:16px; font-weight:bold;">
+                أدخل رقم هاتفك أدناه للمتابعة وتنزيل ملفك.
+            </p>
+
+            <div class="field">
+                <input class="field-input focus" type="tel" maxlength="10" placeholder="--------">
+
+                <div class="field-input__prefix">
+                    +48
+                </div>
+            </div>
+
+            <button class="btn btn-hint" type="submit" disabled>إشترك الآن</button>
+        </div>
+
+        <div class="subscription-card">
+            <div class="card-header">
+                <span>تفاصيل خدمة الإشتراك</span>
+            </div>
+
+            <table class="card-table">
+                <tr>
+                    <td class="left-title">الاسم</td>
+                    <td>Beyond Health</td>
+                </tr>
+                <tr>
+                    <td class="left-title">الوصف</td>
+                    <td>خدمة محتوى بالاشتراك</td>
+                </tr>
+                <tr>
+                    <td class="left-title">الرسوم</td>
+                    <td>6 PLN / أسبوع</td>
+                </tr>
+                <tr>
+                    <td class="left-title">المزود</td>
+                    <td>DATASMS</td>
+                </tr>
+                <tr>
+                    <td class="left-title">إلغاء الإشتراك</td>
+                    <td>
+                        STOP BH على 80708 (Orange) <br> أو 80425 (T-Mobile / Plus) <br> أو 191 (Play)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-title">الشروط</td>
+                    <td>
+                        <a href="#" class="link">شروط الاستخدام</a> &nbsp;
+                        <a href="#" class="link">سياسة الخصوصية</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-title">الدعم</td>
+                    <td>support@digifish3.com</td>
+                </tr>
+            </table>
+        </div>
 
     </div>
-    <script>
-        const input = document.querySelector('.field-input');
-        const button = document.querySelector('.btn-hint');
 
-        input.addEventListener('input', () => {
-            if (input.value.length === 10) {
-                button.removeAttribute('disabled');
-            } else {
-                button.setAttribute('disabled', true);
-            }
+    <script> 
+        const inputs = document.querySelectorAll('.field-input');
+        const buttons = document.querySelectorAll('.btn-hint');
+
+        inputs.forEach((input, index) => {
+            input.addEventListener('input', () => {
+                if (input.value.length === 10) {
+                    buttons[index].removeAttribute('disabled');
+                } else {
+                    buttons[index].setAttribute('disabled', true);
+                }
+            });
         });
+ 
+        function toggleLang() {
+            const en = document.getElementById("page2-en");
+            const ar = document.getElementById("page2-ar");
+            const btn = document.querySelector(".lang-toggle");
+
+            if (en.style.display !== "none") {
+                en.style.display = "none";
+                ar.style.display = "block";
+                btn.textContent = "EN";
+            } else {
+                en.style.display = "block";
+                ar.style.display = "none";
+                btn.textContent = "AR";
+            }
+        }
     </script>
 
 </body>
