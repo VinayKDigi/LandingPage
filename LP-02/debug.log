@@ -5,3 +5,5 @@
 [1120/045101.210:WARNING:dns_config_service_win.cc(668)] Failed to read DnsConfig.
 [1120/103623.672:WARNING:dns_config_service_win.cc(668)] Failed to read DnsConfig.
 [1120/103628.685:WARNING:dns_config_service_win.cc(668)] Failed to read DnsConfig.
+[1121/102023.418:WARNING:dns_config_service_win.cc(668)] Failed to read DnsConfig.
+[1121/115043.108:ERROR:browser_gpu_channel_host_factory.cc(139)] Failed to launch GPU process.

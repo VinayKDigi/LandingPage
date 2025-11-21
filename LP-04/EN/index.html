@@ -10,60 +10,47 @@
 
 <body>
     <div class="bg"></div>
-    <div class="wrapper"> 
-        <header class="header">
-            <div class="logo logo-center">
+    <div class="wrapper">
+        <header class="header mt-10">
+            <div class="logo logo-center mt-10">
                 <img src="./BH-logo.png" alt="Beyond Health Logo" width="320" />
             </div>
-            <h2 class="my-3 fs-2">
-                <span lng-a="" class="visible">Japanese Comics Library</span>
-            </h2>
-            <p class="subtitle">
-                Unlimited Access
-            </p>
-            <h6 class="descpription">
-                <span lng-a="" class="visible">Price incl. VAT + data transmission
-                    cost</span>
-            </h6>
         </header>
 
 
-        <form class="form-en form-area">
+        <form class="form-en form-area text-center">
 
-             <label>Enter your mobile number to receive OTP:</label>
+            <label>Enter your Mobile number below</label>
 
-            <div class="phone-field field">
-                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="05"> 
+            <div class=" field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="----------">
+                <div class="field-input__prefix">+968</div>
             </div>
 
             <div class="otp-box-en"></div>
 
             <button class="btn btn-hint btn-en submit-btn" type="button" disabled>
-                 <span>
+                <span>
                     << </span> Subscribe Now <span> >> </span>
-            </button> 
+            </button>
+         
+
         </form>
 
 
-        <div class="d-flex flex-column align-items-center">
-            <div class="my-3 mob-logo-hide">
-                <a id="Linko2" href="https://boobics.com">
-                    <img id="ImgLogo2" src="../img/logo.png" alt="">
-                </a>
-            </div>
+        <div class="d-flex flex-column align-items-center mt-10">
+           
             <div class="footer">
                 <p lng-a="" style="text-align:justify" ;="" class="visible">
                     <br><strong>TERMS AND CONDITIONS:</strong>
                     <br> By clicking on the above subscribe button, you will agree on the below terms and conditions:
                     <br>
-                    <br>1. <span id="spano1">Boobics</span>: Unlimited access to the most popular comics.
-                    <br>2. Customer service: <span id="spano2">support@boobics.com</span>
-                    <br>3. For Mobily Customers, it costs 3 riyal renewed daily (VAT Included).
-                    VAT Tax was already paid with refill card for prepaid subscribers and To Cancel your subscription
-                    send U 3 to 607700.
-                    <br>4. For Zain Customers, it costs 1.5 riyal renewed daily (VAT Included).
-                    VAT Tax was already paid with refill card for prepaid subscribers and To Cancel your subscription
-                    send U 3 to 763208.
+                    <br>1. You will subscribe to beyondlifestyle service. Your subscription will be automatically renewed.
+                    <br>2. This service is available for Ooredoo users at OMR 0.3 / Day
+                    <br>3. To unsubscribe at any time, send UNSUB BL to 92618
+                    <br>4. To make use of this service, you must be more than 18 years old or have received permission from your parents or person who is authorized to pay your bill
+                    <br>5. Charges will be deducted from user balance.
+                    
                 </p>
 
             </div>
@@ -73,7 +60,7 @@
                         <div class="col-md-12 col-12">
                             <div class="footer-buttons text-end text-md-center">
                                 <ul lng-a="" class="list-unstyled visible">
-                                    <li><a href=" ">T&amp;Cs</a>
+                                    <li><a href=" ">T&amp;C</a>
                                     </li>
                                     <li><a href=" ">Privacy Policy</a>
                                     </li>
@@ -107,8 +94,8 @@
                     // Replace mobile field with OTP field
                     form.innerHTML = `
 
-                <div class="phone-field">
-                    <input class="field-input mobile-en otp-input" style=" text-align:center" type="tel" maxlength="4" placeholder="••••">
+                <div class="field">
+                    <input class="field-input mobile-en otp-input" style="padding: 0 38px 0 38px;  text-align:center" type="tel" maxlength="4" placeholder="••••">
                 </div>
 
                 <button class="btn submit-btn btn-en" type="button">Verify OTP</button>
