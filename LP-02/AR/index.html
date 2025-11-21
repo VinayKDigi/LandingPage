@@ -81,15 +81,15 @@
             const mobileInput = document.querySelector(mobileSelector);
             const form = document.querySelector(formSelector);
             const button = document.querySelector(btnSelector);
+            const steps = document.querySelector(".steps");
 
             mobileInput.addEventListener("input", () => {
 
                 // when mobile is filled 10 digits → replace input
                 if (mobileInput.value.length === 10) {
-
-                    // Replace mobile field with OTP field
+                    steps.style.display = "none"; 
                     form.innerHTML = ` 
-
+<p class="steps">أدخل رمز التحقق الذي استلمته عبر الرسالة القصيرة – صفحة رمز التحقق</p>
                     <div class="field">
                         <input class="field-input otp-input" style="padding: 0 38px 0 38px; text-align:center" type="tel" maxlength="4" placeholder="••••">
                     </div>
