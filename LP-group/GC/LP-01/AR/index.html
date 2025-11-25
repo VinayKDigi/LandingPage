@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>جيم كافيه</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div id="page-ar">
+
+        <div class="container">
+
+            <div class="top">
+                <div class="menu-icon">☰</div>
+                <div class="title">
+                    اشترك في <span class="theme-color">Game Cafe</span>
+                </div>
+                <div></div>
+            </div>
+
+            <div class="steps">
+                <div>الخطوة 1/2</div>
+                <div class="d-none">الخطوة 2/2</div>
+                <div class="step"></div>
+                <div class="step"></div>
+            </div>
+
+            <h1 class="heading">
+                تابع إلى <span class="theme-color">اللعب الآن</span>
+            </h1>
+
+            <div class="controller">
+                <img src="./Gaming.png" alt="Game Controller" width="300">
+            </div>
+
+            <form class="form-ar">
+
+                <div class="label">
+                    أدخل رقم هاتفك <br> ستصلك رمز التحقق (PIN)
+                </div>
+
+                <div class="field">
+                    <input class="field-input mobile-ar" type="tel" maxlength="10" placeholder="--------">
+                    <div class="field-input__prefix">+371</div>
+                </div>
+
+                <div class="otp-box-ar"></div>
+
+                <button class="btn btn-hint btn-ar" type="button" disabled>
+                    متابعة
+                </button>
+
+                <div class="my-3" style="color:#bebebe;margin-top:20px;font-size:8px">
+                    بالضغط على زر الاشتراك، أوافق على شروط استخدام خدمة GAMECAFE
+                    <a href="https://gamecafe.df3.club"> https://gamecafe.df3.club </a>
+                    وأوافق على البدء في استخدام الخدمة فور تفعيلها. رسوم الاشتراك هي
+                    2.85 يورو / الأسبوع. سيتم إضافة الرسوم إلى فاتورة مشغل الهاتف أو خصمها
+                    من رصيد البطاقة مسبقة الدفع.
+                </div>
+
+            </form>
+
+            <footer class="footer note" style="color:#bebebe;margin-top:20px;font-size:8px">
+
+                GAMECAFE هي خدمة اشتراك متاحة لمشتركي BITE Latvia و LMT. توفر هذه الخدمة ألعاباً من فئات متنوعة.
+                تكلفة الاشتراك 2.85 يورو/الأسبوع. سيتم إضافة الرسوم إلى فاتورة مشغل الهاتف أو سيتم خصمها من رصيد
+                البطاقة مسبقة الدفع. يمكنك إلغاء الاشتراك في أي وقت بإرسال رسالة نصية تحتوي على STOP GCAFE إلى 1868.
+                يتم تجديد الاشتراك تلقائياً كل أسبوع حتى تقوم بإلغائه. يجب أن يكون عمرك 18 عاماً على الأقل أو لديك إذن
+                من ولي الأمر أو الشخص المسؤول عن دفع الفاتورة. إذا كان لديك أي أسئلة أو تحتاج إلى مساعدة، يرجى الاتصال
+                بخدمة الدعم عبر البريد:
+                <a href="/lv/ntsmrt-common-gamecafe/tnc">support.lv@digifish3.com</a>
+                أو الاتصال على +37167881528.
+                <a href="">الشروط والأحكام</a>
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                // عند إدخال 10 أرقام → استبدال الحقل بحقل OTP
+                if (mobileInput.value.length === 10) {
+
+                    form.innerHTML = `
+
+                <div class="field">
+                    <input class="field-input otp-input" style="padding: 0 38px 0 38px; text-align:center" type="tel" maxlength="4" placeholder="••••">
+                </div>
+
+                <button class="btn btn-hint btn-ar" type="button">تأكيد رمز التحقق</button>
+            `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-ar", ".form-ar", ".btn-ar");
+
+    </script>
+
+</body>
+
+</html>

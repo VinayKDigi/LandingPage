@@ -1,0 +1,486 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #333;
+}
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* TOP BAR */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: clamp(14px, 3vw, 18px);
+    margin-bottom: 15px;
+}
+
+.title {
+    font-size: 12px;
+    text-align: center;
+}
+
+/* PROGRESS SECTION */
+.steps {
+    color: #404040;
+    font-size: 12px;
+    line-height: 1.18;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.step {
+    float: left;
+    width: calc(50% - 4px);
+    height: 8px;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.d-none {
+    display: none;
+}
+
+.step+.step {
+    margin-left: 8px;
+}
+
+.step:after {
+    content: '';
+    display: block;
+    border-radius: 2px;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(273.01deg, #1b6bff -8.03%, #006994 109.58%);
+    transition: .5s ease;
+}
+
+.steps .step:last-child:after {
+    display: none;
+}
+
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 50px;
+    margin: 8px auto;
+}
+
+.progress {
+    width: 25%;
+    height: 100%;
+    background: #2d7df4;
+    border-radius: 50px;
+}
+
+/* HEADINGS */
+/* .heading {
+    font-size: clamp(22px, 6vw, 30px);
+    margin-top: 25px;
+    font-weight: bold;
+} */
+
+.heading {
+    color: #404040;
+    font-size: 26px;
+    line-height: 1.18;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.controller img {
+    width: 80%;
+    max-width: 220px;
+    min-width: 140px;
+    margin: 5px auto;
+}
+
+.my-3 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.subtext {
+    color: #666;
+    margin-top: 10px;
+    font-size: clamp(14px, 3.5vw, 16px);
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin: 25px auto;
+}
+
+.input-box .icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: clamp(16px, 4vw, 20px);
+    color: #888;
+    transition: 0.3s;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 2px solid #b9cee4;
+    border-radius: 12px;
+    font-size: clamp(16px, 4vw, 20px);
+    transition: 0.3s;
+}
+
+.input-box input:focus {
+    border-color: #dc2430;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+.input-box input:focus+.icon {
+    color: #dc2430;
+    transform: translateY(-50%) scale(1.15);
+}
+
+/* BUTTON */
+.btn {
+    width: 100%;
+    padding: 14px;
+    font-size: clamp(18px, 4.5vw, 22px);
+    background: #d3d3d3;
+    border: none;
+    border-radius: 10px;
+    color: #444;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* FOOTER NOTE */
+.note {
+    margin-top: 25px;
+    font-size: clamp(11px, 3vw, 13px);
+    color: #777;
+    line-height: 1.5;
+    padding: 0 10px;
+}
+
+.label {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    color: #404040;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.field {
+    position: relative;
+    margin-bottom: 32px;
+    -webkit-animation: heartbeat 1.75s ease-in-out infinite both;
+    animation: heartbeat 1.75s ease-in-out infinite both;
+}
+
+.field-input.focus,
+.field-input:focus {
+    border-color: #dc2430;
+}
+
+.field-input {
+    display: block;
+    width: 100%;
+    height: 64px;
+    background: #fff;
+    border: 2px solid #dc2430;
+    border-radius: 8px;
+    padding: 0 38px 0 130px;
+    direction: ltr;
+    color: #404040;
+    font-size: 24px;
+    letter-spacing: 10px;
+    transition: .5s ease;
+}
+
+.field-input__prefix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 40px;
+    color: #404040;
+    font-size: 24px;
+    line-height: 66px;
+    letter-spacing: 2px;
+    animation: shake 3s;
+    -webkit-animation: shake 3s;
+    background-color: #f5f5f5;
+    padding-right: 15px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    height: 58px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+
+}
+
+.field-icon {
+    position: absolute;
+    top: 20px;
+    left: 14px;
+    fill: #404040;
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+.field-input:focus~.field-label,
+.focus~.field-label {
+    top: -9px;
+    left: 32px;
+    background: #fff;
+    padding: 2px 8px;
+    color: #dc2430;
+    font-size: 14px;
+}
+
+
+.btn.disabled,
+.btn[disabled] {
+    background: rgba(0, 0, 0, .1);
+    color: rgba(0, 0, 0, .3);
+    box-shadow: none;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(273.01deg, #dc2430 -8.03%, #dc2430 109.58%);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+.field-label {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    font-size: 24px;
+    line-height: 1;
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+
+@keyframes heartbeat {
+
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function:
+            ease-out;
+        animation-timing-function:
+            ease-out;
+    }
+
+    10% {
+        -webkit-transform: scale(.91);
+        transform: scale(.91);
+        -webkit-animation-timing-function:
+            ease-in;
+        animation-timing-function:
+            ease-in;
+    }
+
+    17% {
+        -webkit-transform: scale(.98);
+        transform: scale(.98);
+        -webkit-animation-timing-function:
+            ease-out;
+        animation-timing-function:
+            ease-out;
+    }
+
+    33% {
+        -webkit-transform: scale(.87);
+        transform: scale(.87);
+        -webkit-animation-timing-function:
+            ease-in;
+        animation-timing-function:
+            ease-in;
+    }
+
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function:
+            ease-out;
+        animation-timing-function:
+            ease-out;
+    }
+
+}
+
+
+.theme-color {
+    color: #dc2430;
+    font-weight: bold;
+}
+
+/* ========= RESPONSIVE BREAKPOINTS ========== */
+
+/* Tablet */
+@media (min-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+    body {
+        background: #f5f5f5;
+    }
+
+    .container {
+        background: #fff;
+        margin-top: 40px;
+        border-radius: 15px;
+        padding: 20px;
+    }
+}
+ 
+
+.lang-toggle {
+    background: #000;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    border: none;
+}
+
+#page-en {
+    display: block;
+}
+
+#page-ar {
+    direction: rtl;
+    text-align: right;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+
+
+
+.footer-menu{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    list-style: none; 
+    margin: 15px auto;
+}
+.footer-menu a{
+    color: #999;
+}
+
+   
+/* Base: horizontal lists with gap, no bullets */
+.footer-buttons .list-unstyled {
+  display: flex;
+  flex-wrap: nowrap;          /* keep items on one line */
+  gap: 1rem;                  /* space between items */
+  align-items: center;
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+  font-size: 10px;
+}
+
+/* Make each <li> inline-flex so anchors can be centered vertically */
+.footer-buttons .list-unstyled li {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Anchor styling */
+.footer-buttons .list-unstyled a {
+  text-decoration: none;
+  /* font-size: 0.95rem; */
+  padding: 0.25rem 0;
+  color: #999
+}
+
+/* Optional: add a subtle separator (pipe) between items */
+.footer-buttons .list-unstyled li + li::before {
+  content: "│";               /* vertical bar separator */
+  margin-right: 0.9rem;
+  margin-left: 0.9rem;
+  opacity: 0.5;
+  font-size: 10px;
+}
+
+/* Remove separator if you prefer no separators */
+.footer-buttons.no-separators .list-unstyled li + li::before {
+  content: "";
+  margin: 0;
+}
+
+/* RTL support: apply for Arabic list only */
+.footer-buttons ul[lang="ar"],
+.footer-buttons .arabic-list {
+  direction: rtl;            /* reverse order visually for RTL */
+}
+
+/* Responsive behaviour:
+   On small screens allow wrapping and centre-align items */
+@media (max-width: 575.98px) {
+  .footer-buttons .list-unstyled {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+  .footer-buttons .list-unstyled li + li::before {
+    /* hide separator on small screens to avoid clutter */
+    content: "";
+    margin: 0;
+  }
+}
+
+
+.footer {
+    color: #666;
+    font-size: 10px
+}

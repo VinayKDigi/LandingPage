@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>جيم كافيه</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="wrapper" id="page-en">
+
+        <div class="top-bar">
+             <h3> <img src="./game-cafe-logo.png" width="200" /></h3>
+        </div>
+
+        <h2 class="title">محتواك جاهز الآن</h2>
+
+        <div class="icon-box">
+            <img id="loadingImg" src="./Gaming.png" width="250" />
+        </div>
+
+        <div class="steps">
+            <p><span class="step-num">1</span> أدخل رقم هاتفك المحمول</p>
+            <p><span class="step-num">2</span> ستستلم رمز PIN فورًا وتبدأ الاستخدام الآن!</p>
+        </div>
+
+        <form class="form-en">
+
+            <div class="field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="--------">
+                <div class="field-input__prefix">+371</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn btn-hint btn-en heartbeat" type="button" disabled>
+                استمرار
+            </button>
+
+            <div class="my-3" style="color:#bebebe;margin-top:20px;font-size:8px">
+                من خلال النقر على زر الاشتراك، فإنني أوافق على شروط استخدام خدمة GAMECAFE
+                <a href="https://gamecafe.df3.club">https://gamecafe.df3.club</a>
+                وأوافق على بدء استخدام هذه الخدمة فور تفعيلها. رسوم الاشتراك في الخدمة هي
+                2.85 يورو/أسبوع. سيتم إضافة الرسوم إلى فاتورة مشغل الهاتف الشهري أو خصمها من رصيد بطاقة الدفع المسبق.
+            </div>
+
+        </form>
+
+        <footer class="footer note" style="color:#bebebe;margin-top:20px;font-size:8px">
+
+            خدمة GAMECAFE هي خدمة اشتراك متاحة لعملاء BITE Latvia وLMT. توفر هذه الخدمة ألعابًا من مختلف الفئات.
+            تكلفة الاشتراك هي 2.85 يورو/أسبوع. سيتم إضافة رسوم الخدمة إلى فاتورة مشغل الهاتف أو خصمها من رصيد البطاقة مسبقة الدفع.
+            يمكنك إلغاء الاشتراك في أي وقت عن طريق إرسال رسالة نصية تحتوي على:
+            STOP GCAFE
+            إلى الرقم 1868.
+            يتم تجديد اشتراكك تلقائيًا كل أسبوع حتى تقوم بإلغائه. يجب أن يكون عمرك 18 عامًا أو أن تحصل على إذن من أحد الوالدين أو الشخص المسؤول عن دفع الفواتير لاستخدام هذه الخدمة.
+            إذا كانت لديك أي أسئلة أو تحتاج إلى المساعدة، يرجى التواصل مع فريق الدعم عبر البريد التالي:
+            <a href="/lv/ntsmrt-common-gamecafe/tnc">support.lv@digifish3.com</a>
+            أو الاتصال على الرقم: ‎+37167881528.
+            <a href="">الشروط والأحكام</a>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        setTimeout(() => {
+            document.getElementById("imgCloud").style.display = "flex";
+            document.getElementById("loadingImg").style.display = "none";
+        }, 4500);
+
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+            const steps = document.querySelector(".steps");
+
+            mobileInput.addEventListener("input", () => {
+
+                if (mobileInput.value.length === 10) {
+                    steps.style.display = "none";
+
+                    form.innerHTML = `  
+                    <p class="steps">أدخل رمز PIN الذي وصلك عبر الرسالة القصيرة</p>
+
+                    <div class="field">
+                        <input class="field-input otp-input" 
+                        style="padding: 0 38px; text-align:center" 
+                        type="tel" maxlength="4" placeholder="••••">
+                    </div>
+
+                    <button class="btn btn-hint btn-en" type="button">تأكيد الرمز</button>
+                `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+
+</body>
+
+</html>

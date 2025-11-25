@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لعبة الحجارة</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="wrapper">
+
+        <header class="header mt-10">
+            <div class="logo logo-center mt-10">
+                <img src="./GOS_Final_Logo.png" alt="Game of Stone" width="250" />
+            </div>
+        </header>
+
+        <form class="form-en form-area text-center">
+
+            <label>أدخل رقم هاتفك أدناه</label>
+
+            <div class="field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="----------">
+                <div class="field-input__prefix">+973</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn btn-hint btn-en submit-btn" type="button" disabled>
+                <span>
+                    <<< /span> اشترك الآن <span>>></span>
+            </button>
+
+            <div class="my-3">مجانًا لمدة 24 ساعة</div>
+
+            <div style="color:#050505;margin-top:20px;font-size:10px">إخلاء المسؤولية</div>
+
+        </form>
+
+        <footer class="footer note" style="color:#bebebe;margin-top:20px;font-size:8px">
+            تكلفة الاشتراك لمشتركي زين هي ‎0.2‎ دينار بحريني يوميًا ويتم التجديد تلقائيًا.
+            يمكنك إلغاء الاشتراك في أي وقت عبر my.sla-digital.com أو عن طريق إرسال رسالة نصية تحتوي على
+            `UNSUB GOS` إلى 94005.
+            للدعم الفني يرجى التواصل عبر: support@digifish3.com
+        </footer>
+
+    </div>
+
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                // when mobile is filled 10 digits → replace input
+                if (mobileInput.value.length === 10) {
+
+                    // Replace mobile field with OTP field
+                    form.innerHTML = `
+
+                <div class="field">
+                    <input class="field-input mobile-en otp-input" 
+                        style="padding: 0 38px; text-align:center" 
+                        type="tel" maxlength="4" placeholder="••••">
+                </div>
+
+                <button class="btn submit-btn btn-en" type="button">تحقق من رمز التفعيل</button>
+            `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+
+</body>
+
+</html>

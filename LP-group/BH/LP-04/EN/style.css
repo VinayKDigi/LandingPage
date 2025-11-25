@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    color: #333; 
+}
+
+.bg{
+    background-image: url("./bg_image_bh.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index:-2;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+.wrapper {  
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: -1;
+    background-size: cover;
+    opacity: 0.08;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.header h1 {
+    font-size: 2.3rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #8bc443;
+}
+
+.logo-center {
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.75rem;
+    line-height: 1;
+    color:yellowgreen;
+    margin-bottom: 20px;
+}
+.description {
+    font-size: 1rem;
+    color: #ccc; 
+}
+.footer {
+    color: #666;
+    font-size: 10px
+}
+.fs-2 {
+    font-size: 1.8rem;
+}
+.info-box { 
+    color: #3a5f0b;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    border-left: 5px solid #1d2802;
+    border-bottom: 5px solid #1d2802;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+
+}
+
+.form-area label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.form-area .desc {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+.phone-field {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #3a5f0b;
+}
+
+.phone-field span {
+    background: #eaf2ff;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 1px solid #d0ddf5;
+}
+
+.phone-field input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #d0d8e8;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    color: #fff
+}
+
+.phone-field input:focus {
+    border-color: #3e8bff;
+}
+.phone-field input::placeholder {
+    color: #f5f5f5;
+}
+ 
+
+.tos {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 14px;
+}
+
+.tos a {
+    color: #0066ff;
+    text-decoration: none;
+}
+
+.tos a:hover {
+    text-decoration: underline;
+}
+
+.my-5 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.my-3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 22px 18px;
+    }
+
+    .submit-btn {
+        padding: 14px;
+    }
+}
+
+
+/* ============================
+   FORM AREA CONTAINER
+============================ */
+.form-area {
+    /* background: rgba(255, 255, 255, 0.12); */
+    padding: 22px;
+    border-radius: 18px;
+    backdrop-filter: blur(6px);
+    transition: 0.35s ease;
+    animation: fadeInForm 0.6s ease forwards;
+}
+
+/* Focus effect */
+.form-area:focus-within {
+    transform: scale(1.02);
+    /* box-shadow: 0 0 22px rgba(255, 255, 255, 0.18); */
+}
+
+/* ============================
+   SEQUENTIAL ELEMENT ANIMATION
+============================ */
+
+/* Label */
+.form-area label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+
+    opacity: 0;
+    animation: slideIn 0.6s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* Phone field container */
+.phone-field {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+
+    opacity: 0;
+    animation: slideIn 0.6s ease forwards;
+    animation-delay: 0.4s;
+}
+
+/* Country code box */
+.phone-field span {
+    background: #ffffff15;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: 1px solid #ffffff35;
+    color: #fff;
+    transition: 0.3s;
+}
+
+/* Input field */
+.phone-field input {
+    flex: 1;
+    padding: 13px;
+    border: 2px solid #ffffff25;
+    border-radius: 10px;
+    color: #000;
+    outline: none;
+    font-size: 1rem;
+    transition: 0.35s;
+    text-align: center;
+    background-color: #fff;
+}
+
+/* Focus pulse */
+.phone-field input:focus {
+    border-color: #9aff64;
+    animation: pulse 1.2s infinite ease-in-out;
+    box-shadow: 0 0 15px #9aff6450;
+    background: #ffffff;
+}
+.phone-field input::placeholder {
+    color: #00000090;
+     background-color: #fff;
+}
+
+/* ============================
+   SUBMIT BUTTON
+============================ */
+
+.submit-btn {
+    width: 100%;
+    background: yellowgreen;
+    color: #1d2802;
+    padding: 15px;
+    border-radius: 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: 0.25s;
+
+    opacity: 0;
+    animation: slideIn 0.6s ease forwards,
+        btnPulse 2.2s infinite ease-in-out;
+    animation-delay: 0.6s;
+}
+
+.submit-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px #9aff6445;
+}
+
+/* .tos {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 14px;
+    opacity: 0;
+
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.8s;
+}
+
+.tos a {
+    color: #9aff64;
+} */
+
+/* ============================
+   KEYFRAMES
+============================ */
+
+@keyframes fadeInForm {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #9aff6435;
+    }
+
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 20px #9aff6475;
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #9aff6435;
+    }
+}
+
+@keyframes btnPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+.lang-switch {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.lang-switch select {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+}
+
+.lang-switch select:focus {
+    border-color: #9aff64;
+    box-shadow: 0 0 6px #9aff6444;
+}
+
+/* TOP BAR */
+.top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Logo left */
+.top-logo img {
+    width: 250px;
+    height: auto;
+}
+
+.mt-10{
+    margin-top: 5rem;
+}
+
+/* Language dropdown right */
+.lang-switch select {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+}
+
+.lang-switch select:focus {
+    border-color: #9aff64;
+    box-shadow: 0 0 6px #9aff6444;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .top-logo img {
+        width: 110px;
+    }
+    .lang-switch select {
+        font-size: 0.75rem;
+        padding: 5px 8px;
+    }
+}
+
+
+/* Base: horizontal lists with gap, no bullets */
+.footer-buttons .list-unstyled {
+  display: flex;
+  flex-wrap: nowrap;          /* keep items on one line */
+  gap: 1rem;                  /* space between items */
+  align-items: center;
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+  font-size: 10px;
+}
+
+/* Make each <li> inline-flex so anchors can be centered vertically */
+.footer-buttons .list-unstyled li {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Anchor styling */
+.footer-buttons .list-unstyled a {
+  text-decoration: none;
+  /* font-size: 0.95rem; */
+  padding: 0.25rem 0;
+  color: #ffffff35
+}
+
+/* Optional: add a subtle separator (pipe) between items */
+.footer-buttons .list-unstyled li + li::before {
+  content: "│";               /* vertical bar separator */
+  margin-right: 0.9rem;
+  margin-left: 0.9rem;
+  opacity: 0.5;
+  font-size: 10px;
+}
+
+/* Remove separator if you prefer no separators */
+.footer-buttons.no-separators .list-unstyled li + li::before {
+  content: "";
+  margin: 0;
+}
+
+/* RTL support: apply for Arabic list only */
+.footer-buttons ul[lang="ar"],
+.footer-buttons .arabic-list {
+  direction: rtl;            /* reverse order visually for RTL */
+}
+
+/* Responsive behaviour:
+   On small screens allow wrapping and centre-align items */
+@media (max-width: 575.98px) {
+  .footer-buttons .list-unstyled {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+  .footer-buttons .list-unstyled li + li::before {
+    /* hide separator on small screens to avoid clutter */
+    content: "";
+    margin: 0;
+  }
+}
+ 
+.field {
+    position: relative;
+    margin-bottom: 15px;
+    -webkit-animation: heartbeat 1.75s ease-in-out infinite both;
+    animation: heartbeat 1.75s ease-in-out infinite both;
+}
+
+.field-input.focus,
+.field-input:focus {
+    border-color: yellowgreen;
+}
+
+.field-input {
+    display: block;
+    width: 100%;
+    height: 64px;
+    background: #fff;
+    border: 2px solid yellowgreen;
+    border-radius: 8px;
+    padding: 0 38px;
+    direction: ltr;
+    color: #404040;
+    font-size: 24px;
+    letter-spacing: 10px;
+    transition: .5s ease;
+}
+
+.field-input__prefix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 15px;
+    color: #404040;
+    font-size: 24px;
+    line-height: 66px;
+    letter-spacing: 2px;
+    animation: shake 3s;
+    -webkit-animation: shake 3s;
+    background-color: #f5f5f5;
+    padding-right: 15px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    height: 58px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+
+}
+
+.field-icon {
+    position: absolute;
+    top: 20px;
+    left: 14px;
+    fill: #404040;
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+.field-input:focus~.field-label,
+.focus~.field-label {
+    top: -9px;
+    left: 32px;
+    background: #fff;
+    padding: 2px 8px;
+    color: #dc2430;
+    font-size: 14px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.price-info, p {
+    font-size: 10px;
+    margin: 15px 0;
+    opacity: .9;
+    color: #a3a3a3;
+}
+
+
+/* Terms */
+.terms {
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 10px;
+    text-align: left;
+    line-height: 1.5;
+    color: #a3a3a3;
+}
+
+.terms h4 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+
+.footer-menu{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    list-style: none; 
+    margin: 15px auto;
+}
+.footer-menu a{
+    color: #a3a3a3;
+}

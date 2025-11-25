@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لعبة الحجارة</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===================== ARABIC ===================== -->
+    <div id="page2-ar" class="page2">
+
+        <h2 class="header-title">كل ما تحتاجه، على بُعد تحميل واحد فقط!</h2>
+
+        <div class="down-icon">
+            <img src="./gos_image.png" width="100" />
+        </div>
+
+        <form class="form-ar input-box">
+
+            <p style="font-size:16px; font-weight:bold;">
+                أدخل رقم هاتفك المحمول أدناه للمتابعة وتنزيل الملف.
+            </p>
+
+            <div class="field">
+                <input class="field-input mobile-ar" type="tel" maxlength="10" placeholder="--------">
+                <div class="field-input__prefix">+973</div>
+            </div>
+
+            <div class="otp-box-ar"></div>
+
+            <button class="btn btn-hint btn-ar heartbeat" type="button" disabled>
+                اشترك الآن
+            </button>
+
+            <div class="my-3">مجاني لمدة 24 ساعة</div>
+
+            <div style="color:#050505;margin-top:20px;font-size:10px">إخلاء المسؤولية</div>
+
+        </form>
+
+        <div class="subscription-card">
+            <div class="card-header"><span>تفاصيل خدمة الاشتراك</span></div>
+
+            <table class="card-table text-left">
+                <tr>
+                    <td class="left-title">الاسم</td>
+                    <td>Game of stone</td>
+                </tr>
+                <tr>
+                    <td class="left-title">الوصف</td>
+                    <td>خدمة اشتراك في المحتوى</td>
+                </tr>
+                <tr>
+                    <td class="left-title">الرسوم</td>
+                    <td>0.2 دينار بحريني / يوم</td>
+                </tr>
+                <tr>
+                    <td class="left-title">المزوّد</td>
+                    <td>DATASMS</td>
+                </tr>
+                <tr>
+                    <td class="left-title">إلغاء الاشتراك</td>
+                    <td>
+                        أرسل كلمة <code>UNSUB GOS</code> إلى 94005
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-title">الشروط</td>
+                    <td>
+                        <a href="#" class="link">شروط الاستخدام</a> &nbsp;
+                        <a href="#" class="link">سياسة الخصوصية</a> &nbsp;
+                        <a href="#" class="link">اتصل بنا</a> &nbsp;
+                        <a href="#" class="link">إخلاء المسؤولية</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-title">الدعم</td>
+                    <td>support@digifish3.com</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                // when mobile is filled 10 digits → replace input
+                if (mobileInput.value.length === 10) {
+
+                    // Replace mobile field with OTP field
+                    form.innerHTML = `
+<p style="font-size:16px; font-weight:bold;">
+أدخل رمز التحقق (OTP) للمتابعة وتنزيل الملف.
+</p>
+
+<div class="field">
+    <input class="field-input otp-input" style="text-align:center" type="tel" maxlength="4" placeholder="••••">
+</div>
+
+<button class="btn btn-hint btn-ar" type="button">تحقق من الرمز</button>
+`;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-ar", ".form-ar", ".btn-ar");
+    </script>
+
+</body>
+
+</html>

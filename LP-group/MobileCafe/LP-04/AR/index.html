@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>بيوند هيلث – التفعيل</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body dir="rtl">
+    <div class="bg"></div>
+    <div class="wrapper">
+        <header class="header mt-10">
+            <div class="logo logo-center mt-10">
+                <img src="./MC-logo.png" alt="Beyond Health Logo" width="300" />
+            </div>
+        </header>
+
+        <form class="form-en form-area text-center">
+
+            <label>أدخل رقم هاتفك المحمول أدناه</label>
+
+            <div class="field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="----------">
+                <div class="field-input__prefix">+968</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn btn-hint btn-en submit-btn" type="button" disabled>
+                <span>
+                    <<< /span> اشترك الآن <span>>></span>
+            </button>
+
+        </form>
+
+        <p class="price-info">بسعر 0.25 ريال عماني / يوم</p>
+        <p class="price-info">ستصلك رسالة تحتوي على رمز التحقق لإتمام الاشتراك.</p>
+
+        <div class="terms">
+            <h4>الشروط والأحكام</h4>
+            <p>
+                1) سيتم اشتراكك في خدمة MobileCafe وسيتم تجديد الاشتراك تلقائياً.<br><br>
+                2) هذه الخدمة متاحة لمستخدمي عمانتل بسعر 0.25 ريال عماني يومياً.<br><br>
+                3) لإلغاء الاشتراك في أي وقت، أرسل UNSUB DD إلى 92143.<br>
+            </p>
+
+            <ul class="footer-menu">
+                <li><a href="">الشروط والأحكام</a></li>
+                <li><a href="">سياسة الخصوصية</a></li>
+                <li><a href="">اتصل بنا</a></li>
+                <li><a href="">إخلاء المسؤولية</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                if (mobileInput.value.length === 10) {
+
+                    form.innerHTML = `
+
+                <label>أدخل رمز التحقق</label>
+
+                <div class="field">
+                    <input class="field-input mobile-en otp-input"
+                        style="padding: 0 38px; text-align:center"
+                        type="tel" maxlength="4" placeholder="••••">
+                </div>
+
+                <button class="btn submit-btn btn-en" type="button">تأكيد الرمز</button>
+            `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Cafe </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="../AR/index.html">
+            <button class="lang-btn">AR</button>
+        </a>
+
+        <div class="image-box">
+            <img src="./Gaming.png" />
+        </div>
+
+        <h2 class="content-title">YOUR CONTENT IS READY</h2>
+
+        <div class="card form-en">
+            <p class="pntxt"> Verify your mobile number to continue </p>
+
+            <p class="pintxt1">Enter your mobile number</p>
+            <div class="field mb-2">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="X XXX XXXX">
+                <div class="field-input__prefix">+371</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn subscribe-btn btn-en" type="button" disabled>
+                SUBSCRIBE
+            </button>
+
+            <div class="my-3" style="color:#bebebe;margin-top:20px;font-size:8px">By clicking the subscribe button, I
+                accept the GAMECAFE service terms of use <a href="https://gamecafe.df3.club"> https://gamecafe.df3.club
+                </a>
+                and apply to start using this service immediately after its activation. The service subscription fee is
+                2.85 euros/week. The fee will be included in the client's monthly mobile operator bill or deducted from
+                the prepaid card account
+            </div>
+        </div>
+
+
+        <footer class="footer note" style="color:#bebebe;margin-top:20px;font-size:8px">
+
+            GAMECAFE is a subscription service available to BITE Latvia, LMT customers. This service will provide games
+            of various categories. Subscription costs 2.85 EUR/week. The service fee will be included in the mobile
+            operator's bill or deducted from the prepaid card account. You can cancel your subscription to this service
+            at any time by sending a text message to STOP GCAFE to 1868. Your subscription is automatically renewed
+            every week until you cancel it. To use this service, you must be at least 18 years old or have permission
+            from a parent or person authorized to pay your bill. If you have any questions or need assistance, please
+            contact the support service by writing to
+            <a href="/lv/ntsmrt-common-gamecafe/tnc">support.lv@digifish3.com</a>
+            or calling +37167881528. <a href="">Terms and conditions. </a>
+        </footer>
+    </div>
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                if (mobileInput.value.length === 10) {
+
+                    form.innerHTML = `
+                    <p class="pintxt1"> Enter pin here </p>
+                    <div class="field">
+                        <input class="field-input otp-input" style="padding: 0 38px 0 38px; text-align:center" type="tel" maxlength="4" placeholder="••••">
+                    </div>
+
+                    <button class="btn subscribe-btn btn-en" type="button">Verify OTP</button>
+            `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+
+</body>
+
+</html>

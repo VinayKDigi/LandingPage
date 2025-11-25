@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="../AR/index.html">
+            <button class="lang-btn">AR</button>
+        </a>
+
+        <div class="image-box mt-10">
+            <img src="./BH-logo.png" width="250" />
+        </div>
+
+        <h2 class="content-title">YOUR CONTENT IS READY</h2>
+
+        <div class="card form-en">
+            <p class="pntxt"> Verify your mobile number to continue </p>
+
+            <p class="pintxt1">Enter your mobile number</p>
+            <div class="field mb-2">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="X XXX XXXX">
+                <div class="field-input__prefix">+48</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn subscribe-btn btn-en" type="button" disabled>
+                SUBSCRIBE
+            </button>
+
+        </div>
+
+        <p class="price-info">Activate access to:
+            Beyond Health for 6 PLN
+            The fee will be charged weekly</p>
+        <p class="price-info">You can deactivate the service by sending:
+            STOP BH to 80708 (Orange) or 80425 (T-Mobile / Plus) or 191 (Play).</p>
+
+        <p class="price-info">Enter your mobile number. Prepare your phone — you will soon receive a message with a PIN
+            code to confirm your order.</p>
+
+        <div class="terms">
+            <h4>I accept the terms and conditions</h4>
+            <p>
+                Filling out this form means acceptance of: <a href="">the Service Terms and Conditions</a>
+            </p>
+
+            <ul class="footer-menu">
+                <li><a href="">Terms & conditions</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="">Disclaimer</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                if (mobileInput.value.length === 10) {
+
+                    form.innerHTML = `
+                    <p class="pintxt1"> Enter pin here </p>
+                    <div class="field">
+                        <input class="field-input otp-input" style="padding: 0 38px 0 38px; text-align:center" type="tel" maxlength="4" placeholder="••••">
+                    </div>
+
+                    <button class="btn subscribe-btn btn-en" type="button">Verify OTP</button>
+            `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+
+</body>
+
+</html>

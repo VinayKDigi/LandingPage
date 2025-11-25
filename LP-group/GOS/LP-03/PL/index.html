@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Stones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- POLISH PAGE -->
+    <div class="wrapper" id="page-pl">
+
+        <div class="top-bar">
+            <h3> <img src="./GOS_Final_Logo.png" width="150" /></h3>
+        </div>
+
+        <h2 class="title">Twoja zawartość jest gotowa</h2>
+
+        <div class="icon-box">
+            <img src="./gos_image.png" width="100" />
+        </div>
+
+        <div class="steps">
+            <p><span class="step-num">1</span> Wprowadź swój numer telefonu</p>
+            <p><span class="step-num">2</span> Otrzymaj PIN i uzyskaj dostęp TERAZ!</p>
+        </div>
+
+        <form class="form-pl">
+
+            <div class="field">
+                <input class="field-input mobile-pl" type="tel" maxlength="10" placeholder="--------">
+                <div class="field-input__prefix">+973</div>
+            </div>
+
+            <div class="otp-box-pl"></div>
+
+            <button class="btn btn-hint btn-pl heartbeat" type="button" disabled>
+                Kontynuuj
+            </button>
+
+            <div class="my-3">Darmowe przez 24 godziny</div>
+
+            <div style="color:#050505;margin-top:20px;font-size:10px">Zastrzeżenie</div>
+
+        </form>
+
+        <!-- FOOTER -->
+        <footer class="footer note" style="color:#bebebe;margin-top:20px;font-size:8px">
+            Koszt subskrypcji dla klientów Zain wynosi 0.2 BHD/dzień i odnawia się automatycznie.
+            Możesz zrezygnować w dowolnym momencie na stronie my.sla-digital.com lub wysyłając SMS o treści `UNSUB GOS`
+            na numer 94005.
+            Wsparcie techniczne: support@digifish3.com
+        </footer>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        // ANIMATION
+        setTimeout(() => {
+            document.getElementById("imgCloud").style.display = "flex";
+            document.getElementById("loadingImg").style.display = "none";
+        }, 4500);
+
+
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+            const steps = document.querySelector(".steps");
+
+            mobileInput.addEventListener("input", () => {
+
+                // when mobile is filled 10 digits → replace input
+                if (mobileInput.value.length === 10) {
+                    steps.style.display = "none";
+
+                    // Replace mobile field with OTP field
+                    form.innerHTML = `  
+                    <p class="steps">Wprowadź PIN otrzymany w wiadomości SMS</p>
+
+                    <div class="field">
+                        <input class="field-input otp-input" style="padding: 0 38px; text-align:center" type="tel" maxlength="4" placeholder="••••">
+                    </div>
+
+                    <button class="btn btn-hint btn-pl" type="button">Zweryfikuj PIN</button>
+                `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-pl", ".form-pl", ".btn-pl");
+
+    </script>
+
+</body>
+
+</html>

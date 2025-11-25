@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>جيم كافيه</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===================== ARABIC ===================== -->
+    <div id="page2-en" class="page2">
+
+        <h2 class="header-title">كل ما تحتاجه على بُعد ضغطة واحدة فقط!</h2>
+
+        <div class="down-icon">
+            <img src="./Gaming.png" width="200" />
+        </div>
+
+        <form class="form-en input-box">
+
+            <p style="font-size:16px; font-weight:bold;">
+                أدخل رقم هاتفك أدناه لمتابعة تحميل الملف.
+            </p>
+
+            <div class="field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="--------">
+                <div class="field-input__prefix">+371</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn btn-hint btn-en heartbeat" type="button" disabled>
+                اشترك الآن
+            </button>
+
+        </form>
+
+        <div class="subscription-card">
+            <div class="card-header"><span>تفاصيل خدمة الاشتراك</span></div>
+
+            <table class="card-table text-left" style="direction:rtl; text-align:right;">
+                <tr>
+                    <td class="left-title">الاسم</td>
+                    <td>Game Cafe</td>
+                </tr>
+                <tr>
+                    <td class="left-title">الوصف</td>
+                    <td>خدمة اشتراك في المحتوى</td>
+                </tr>
+                <tr>
+                    <td class="left-title">الرسوم</td>
+                    <td>2.85 يورو / أسبوع</td>
+                </tr>
+                <tr>
+                    <td class="left-title">المزوّد</td>
+                    <td>DATASMS</td>
+                </tr>
+
+                <tr>
+                    <td class="left-title">إلغاء الاشتراك</td>
+                    <td>
+                        أرسل STOP GCAFE إلى الرقم 1868
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-title">الشروط</td>
+                    <td>
+                        <a href="#" class="link">شروط الاستخدام</a> &nbsp;
+                        <a href="#" class="link">سياسة الخصوصية</a> &nbsp;
+                        <a href="#" class="link">اتصل بنا</a> &nbsp;
+                        <a href="#" class="link">إخلاء المسؤولية</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-title">الدعم</td>
+                    <td>support.lv@digifish3.com</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                if (mobileInput.value.length === 10) {
+
+                    form.innerHTML = `
+<p style="font-size:16px; font-weight:bold;">
+    أدخل رمز التحقق (PIN) الذي تم إرساله إليك عبر الرسالة القصيرة.
+</p>
+
+<div class="field">
+    <input class="field-input otp-input" style=" text-align:center" type="tel" maxlength="4" placeholder="••••">
+</div>
+
+<button class="btn btn-hint btn-en" type="button">تأكيد الرمز</button>
+`;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+
+</body>
+
+</html>

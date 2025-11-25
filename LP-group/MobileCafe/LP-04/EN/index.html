@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beyond Health – Activation</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="wrapper">
+        <header class="header mt-10">
+            <div class="logo logo-center mt-10">
+                <img src="./MC-logo.png" alt="Beyond Health Logo" width="300" />
+            </div>
+        </header>
+
+
+        <form class="form-en form-area text-center">
+
+            <label>Enter your Mobile number below</label>
+
+            <div class=" field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="----------">
+                <div class="field-input__prefix">+968</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn btn-hint btn-en submit-btn" type="button" disabled>
+                <span>
+                    << </span> Subscribe Now <span> >> </span>
+            </button>
+
+
+        </form>
+
+        <p class="price-info">For 0.25 OMR / Day</p>
+        <p class="price-info">You will receive a PIN to confirm your subscription.</p>
+
+        <div class="terms">
+            <h4>TERMS & CONDITIONS</h4>
+            <p>
+                1) You will subscribe to MobileCafe service. Your subscription will auto-renew.<br><br>
+                2) This service is available for Omantel users at 0.25 OMR / Day<br><br>
+                3) To unsubscribe at any time, send UNSUB DD to 92143<br>
+            </p>
+
+            <ul class="footer-menu">
+                <li><a href="">Terms & conditions</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="">Disclaimer</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                // when mobile is filled 10 digits → replace input
+                if (mobileInput.value.length === 10) {
+
+                    // Replace mobile field with OTP field
+                    form.innerHTML = `
+
+                <div class="field">
+                    <input class="field-input mobile-en otp-input" style="padding: 0 38px 0 38px;  text-align:center" type="tel" maxlength="4" placeholder="••••">
+                </div>
+
+                <button class="btn submit-btn btn-en" type="button">Verify OTP</button>
+            `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+</body>
+
+</html>

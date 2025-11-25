@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Health</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ARABIC PAGE -->
+    <div class="wrapper" id="page-en">
+
+        <div class="icon-box">
+            <img id="loadingImg" src="./BH-logo.png" width="250" />
+        </div>
+
+        <div class="steps">
+            <p><span class="step-num">1</span> أدخل رقم هاتفك</p>
+            <p><span class="step-num">2</span> استلم رمز PIN واحصل على الدخول الآن!</p>
+        </div>
+
+        <form class="form-en">
+
+            <div class="field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="--------">
+                <div class="field-input__prefix">+48</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn btn-hint btn-en heartbeat" type="button" disabled>
+                متابعة
+            </button>
+
+        </form>
+
+        <!-- MOBILE INPUT BOX -->
+
+        <p class="price-info">
+            فعّل الوصول إلى:
+            Beyond Health مقابل 6 زلوتي
+            سيتم خصم الرسوم أسبوعيًا
+        </p>
+
+        <p class="price-info">
+            يمكنك إلغاء الخدمة عبر إرسال:
+            STOP BH إلى 80708 (Orange) أو 80425 (T-Mobile / Plus) أو 191 (Play).
+        </p>
+
+        <p>
+            أدخل رقم هاتفك: حضّر هاتفك — ستصلك خلال لحظات رسالة تحتوي على رمز PIN لتأكيد طلبك.
+        </p>
+
+        <div class="terms">
+            <h4>أوافق على الشروط والأحكام</h4>
+            <p>
+                تعبئة هذا النموذج تعني الموافقة على:
+                <a href="">شروط وأحكام الخدمة</a>
+            </p>
+
+            <ul class="footer-menu">
+                <li><a href="">الشروط والأحكام</a></li>
+                <li><a href="">سياسة الخصوصية</a></li>
+                <li><a href="">اتصل بنا</a></li>
+                <li><a href="">إخلاء المسؤولية</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        // ANIMATION
+        setTimeout(() => {
+            document.getElementById("imgCloud").style.display = "flex";
+            document.getElementById("loadingImg").style.display = "none";
+        }, 4500);
+
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+            const steps = document.querySelector(".steps");
+
+            mobileInput.addEventListener("input", () => {
+
+                if (mobileInput.value.length === 10) {
+                    steps.style.display = "none";
+
+                    form.innerHTML = `
+                    <p class="steps">أدخل رمز PIN الذي استلمته عبر الرسائل
+صفحة التحقق</p>
+
+                <div class="field">
+                    <input class="field-input otp-input"
+                    style="padding: 0 38px; text-align:center"
+                    type="tel" maxlength="4" placeholder="••••">
+                </div>
+
+                <button class="btn btn-hint btn-en" type="button">تأكيد الرمز</button>
+                `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+
+</body>
+
+</html>

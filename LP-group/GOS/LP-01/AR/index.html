@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game of stones</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div id="page-ar">
+
+        <div class="container">
+
+            <div class="top">
+                <div class="menu-icon">☰</div>
+                <div class="title">
+                    اشترك في <span class="theme-color">لعبة الحجارة</span>
+                </div>
+            </div>
+
+            <div class="steps">
+                <div>الخطوة 1/2</div>
+                <div class="d-none">الخطوة 2/2</div>
+                <div class="step"></div>
+                <div class="step"></div>
+            </div>
+
+            <h1 class="heading">
+                تابع <span class="theme-color">اللعب الآن</span>
+            </h1>
+
+            <div class="controller">
+                <img src="download_icon.png" alt="Game Controller" width="300">
+            </div>
+
+            <form id="mainForm" class="form-en">
+
+                <div class="label">
+                    أدخل رقم هاتفك <br> ستصلك شفرة PIN
+                </div>
+
+                <div class="field">
+                    <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="--------">
+                    <div class="field-input__prefix">+973</div>
+                </div>
+
+                <!-- OTP will be inserted here -->
+                <div class="otp-box-en"></div>
+
+                <button class="btn btn-hint btn-en" type="button" disabled>
+                    تابع
+                </button>
+
+                <div class="my-3">مجاني لمدة 24 ساعة</div>
+
+                <div style="color:#050505;margin-top:20px;font-size:10px">
+                    تنبيه
+                </div>
+            </form>
+
+            <footer class="footer note" style="color:#bebebe;margin-top:20px;font-size:8px">
+                تكلفة الاشتراك لمستخدمي زين هي 0.2 دينار بحريني يوميًا يتم تجديدها تلقائيًا.
+                يمكنك إلغاء الاشتراك في أي وقت عبر my.sla-digital.com أو بإرسال `UNSUB GOS` إلى 94005
+                للدعم يرجى التواصل عبر support@digifish3.com
+            </footer>
+        </div>
+
+    </div>
+
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                // when mobile is filled 10 digits → replace input
+                if (mobileInput.value.length === 10) {
+
+                    // Replace mobile field with OTP field
+                    form.innerHTML = ` 
+
+                    <div class="field">
+                        <input class="field-input otp-input" style="padding: 0 38px 0 38px; text-align:center" type="tel" maxlength="4" placeholder="••••">
+                    </div>
+
+                    <button class="btn btn-hint btn-en" type="button">تحقق من رمز التحقق</button>
+                `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+
+</body>
+
+</html>

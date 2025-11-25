@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game of stones</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+
+    <!-- ===================== ENGLISH ===================== -->
+    <div id="page2-en" class="page2">
+
+        <h2 class="header-title">Everything you need, just one download away!</h2>
+
+        <div class="down-icon">
+            <img src="./gos_image.png" width="100" />
+
+        </div>
+
+        <form class="form-en input-box">
+
+            <p style="font-size:16px; font-weight:bold;">
+                Enter your mobile number below to continue downloading your file.
+            </p>
+
+            <div class="field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="--------">
+                <div class="field-input__prefix">+973</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn btn-hint btn-en heartbeat" type="button" disabled>
+                Subscribe Now
+            </button>
+
+            <div class="my-3">Free for 24hrs</div>
+
+            <div style="color:#050505;margin-top:20px;font-size:10px">Disclaimer</div>
+            
+        </form>
+
+        <div class="subscription-card">
+            <div class="card-header"><span>Subscription Service Details</span></div>
+
+            <table class="card-table text-left">
+                <tr>
+                    <td class="left-title">Name</td>
+                    <td>Game of stone</td>
+                </tr>
+                <tr>
+                    <td class="left-title">Description</td>
+                    <td>Content Subscription Service</td>
+                </tr>
+                <tr>
+                    <td class="left-title">Charges</td>
+                    <td>0.2 BHD/day</td>
+                </tr>
+                <tr>
+                    <td class="left-title">Provider</td>
+                    <td>DATASMS</td>
+                </tr>
+
+                <tr>
+                    <td class="left-title">Unsubscribe</td>
+                    <td>
+                        sent `UNSUB GOS` to 94005
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-title">Terms</td>
+                    <td>
+                        <a href="#" class="link">Terms of Use</a> &nbsp;
+                        <a href="#" class="link">Privacy Policy</a> &nbsp;
+                        <a href="#" class="link">Contact us</a> &nbsp;
+                        <a href="#" class="link">Disclaimer</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-title">Support</td>
+                    <td>support@digifish3.com</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                // when mobile is filled 10 digits → replace input
+                if (mobileInput.value.length === 10) {
+
+                    // Replace mobile field with OTP field
+                    form.innerHTML = `
+<p style="font-size:16px; font-weight:bold;">
+                Enter your mobile number below to continue downloading your file.
+            </p>
+                <div class="field">
+                    <input class="field-input otp-input" style=" text-align:center" type="tel" maxlength="4" placeholder="••••">
+                </div>
+
+                <button class="btn btn-hint btn-en" type="button">Verify OTP</button>
+            `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beyond Health – التفعيل</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="wrapper">
+        <header class="header mt-10">
+            <div class="logo logo-center mt-10">
+                <img src="./game-cafe-logo.png" alt="Game Cafe Logo" width="250" />
+            </div>
+        </header>
+
+        <form class="form-en form-area text-center">
+
+            <label>أدخل رقم هاتفك المحمول أدناه</label>
+
+            <div class="field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="----------">
+                <div class="field-input__prefix">+371</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn btn-hint btn-en submit-btn" type="button" disabled>
+                <span>
+                    << </span> اشترك الآن <span> >> </span>
+            </button>
+
+            <div class="my-3" style="color:#bebebe;margin-top:20px;font-size:8px">
+                بالنقر على زر الاشتراك، فإنني أوافق على شروط استخدام خدمة GAMECAFE
+                <a href="https://gamecafe.df3.club">https://gamecafe.df3.club</a>
+                وأتقدم لبدء استخدام هذه الخدمة فور تفعيلها.
+                تبلغ رسوم الاشتراك في الخدمة 2.85 يورو/أسبوع.
+                سيتم إضافة الرسوم إلى فاتورة الهاتف الشهرية الخاصة بالعميل أو خصمها من رصيد البطاقة مسبقة الدفع.
+            </div>
+
+        </form>
+
+        <footer class="footer note" style="color:#bebebe;margin-top:20px;font-size:8px">
+
+            خدمة GAMECAFE هي خدمة اشتراك متاحة لعملاء BITE Latvia و LMT. توفر هذه الخدمة ألعابًا من فئات مختلفة.
+            تكلفة الاشتراك 2.85 يورو/أسبوع.
+            سيتم إضافة رسوم الخدمة إلى فاتورة مشغل الهاتف أو خصمها من الرصيد مسبق الدفع.
+            يمكنك إلغاء الاشتراك في أي وقت عبر إرسال رسالة نصية تحتوي على STOP GCAFE إلى الرقم 1868.
+            يتم تجديد الاشتراك تلقائيًا كل أسبوع حتى تقوم بإلغائه.
+            يجب أن يكون عمرك 18 عامًا على الأقل أو لديك إذن من ولي الأمر أو الشخص المسؤول عن دفع الفاتورة لاستخدام هذه
+            الخدمة.
+            إذا كان لديك أي أسئلة أو تحتاج إلى مساعدة، يرجى التواصل مع خدمة الدعم عبر البريد الإلكتروني
+            <a href="/lv/ntsmrt-common-gamecafe/tnc">support.lv@digifish3.com</a>
+            أو الاتصال على +37167881528.
+            <a href="">الشروط والأحكام</a>
+        </footer>
+
+    </div>
+
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                if (mobileInput.value.length === 10) {
+
+                    form.innerHTML = `
+
+                <div class="field">
+                    <input class="field-input mobile-en otp-input" 
+                    style="padding: 0 38px 0 38px; text-align:center" 
+                    type="tel" maxlength="4" placeholder="••••">
+                </div>
+
+                <button class="btn submit-btn btn-en" type="button">تحقق من رمز التفعيل</button>
+            `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+</body>
+
+</html>

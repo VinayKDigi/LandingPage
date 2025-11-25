@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Cafe</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===================== POLISH ===================== -->
+    <div id="page2-pl" class="page2">
+
+        <h2 class="header-title">Wszystko, czego potrzebujesz — pobierz jednym kliknięciem!</h2>
+
+        <div class="down-icon">
+            <img src="./Gaming.png" width="200"/>
+        </div>
+
+        <form class="form-pl input-box">
+
+            <p style="font-size:16px; font-weight:bold;">
+                Wprowadź swój numer telefonu poniżej, aby kontynuować pobieranie pliku.
+            </p>
+
+            <div class="field">
+                <input class="field-input mobile-pl" type="tel" maxlength="9" placeholder="---------">
+                <div class="field-input__prefix">+48</div>
+            </div>
+
+            <div class="otp-box-pl"></div>
+
+            <button class="btn btn-hint btn-pl heartbeat" type="button" disabled>
+                Subskrybuj teraz
+            </button>
+
+        </form>
+
+        <div class="subscription-card">
+            <div class="card-header"><span>Szczegóły usługi subskrypcji</span></div>
+
+            <table class="card-table text-left">
+                <tr>
+                    <td class="left-title">Nazwa</td>
+                    <td>Game Cafe</td>
+                </tr>
+                <tr>
+                    <td class="left-title">Opis</td>
+                    <td>Usługa subskrypcji treści</td>
+                </tr>
+                <tr>
+                    <td class="left-title">Opłaty</td>
+                    <td>2.85 EUR / tydzień</td>
+                </tr>
+                <tr>
+                    <td class="left-title">Dostawca</td>
+                    <td>DATASMS</td>
+                </tr>
+
+                <tr>
+                    <td class="left-title">Dezaktywacja</td>
+                    <td>
+                        STOP GCAFE na 1868 <br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-title">Regulamin</td>
+                    <td>
+                        <a href="#" class="link">Regulamin</a> &nbsp;
+                        <a href="#" class="link">Polityka prywatności</a> &nbsp;
+                        <a href="#" class="link">Kontakt</a> &nbsp;
+                        <a href="#" class="link">Oświadczenie</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-title">Wsparcie</td>
+                    <td>support.lv@digifish3.com</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                // when mobile is filled 9 digits → replace input
+                if (mobileInput.value.length === 9) {
+
+                    // Replace mobile field with OTP field
+                    form.innerHTML = `
+<p style="font-size:16px; font-weight:bold;">
+                Wprowadź kod PIN, który otrzymasz SMS-em, aby potwierdzić zamówienie.
+            </p>
+                <div class="field">
+                    <input class="field-input otp-input" style="text-align:center" type="tel" maxlength="4" placeholder="••••">
+                </div>
+
+                <button class="btn btn-hint btn-pl" type="button">Zweryfikuj PIN</button>
+            `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-pl", ".form-pl", ".btn-pl");
+    </script>
+
+</body>
+
+</html>

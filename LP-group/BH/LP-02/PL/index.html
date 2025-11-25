@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Health</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- POLISH PAGE -->
+    <div class="wrapper" id="page-en">
+
+        <div class="icon-box">
+            <img id="loadingImg" src="./BH-logo.png" width="250" />
+        </div>
+
+        <div class="steps">
+            <p><span class="step-num">1</span> Wprowadź swój numer telefonu</p>
+            <p><span class="step-num">2</span> Odbierz PIN i uzyskaj dostęp TERAZ!</p>
+        </div>
+
+        <form class="form-en">
+
+            <div class="field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="--------">
+                <div class="field-input__prefix">+48</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn btn-hint btn-en heartbeat" type="button" disabled>
+                Kontynuuj
+            </button>
+
+        </form>
+
+        <!-- MOBILE INPUT BOX -->
+
+        <p class="price-info">
+            Aktywuj dostęp do:
+            Beyond Health za 6 PLN
+            Opłata będzie pobierana co tydzień
+        </p>
+
+        <p class="price-info">
+            Usługę możesz dezaktywować poprzez wysłanie:
+            STOP BH na 80708 (Orange) lub 80425 (T-Mobile / Plus) lub 191 (Play).
+        </p>
+
+        <p class="price-info">
+            Wprowadź swój numer telefonu: Przygotuj telefon — za chwilę otrzymasz wiadomość z kodem PIN,
+            którym zatwierdzisz zamówienie.
+        </p>
+
+        <div class="terms">
+            <h4>Akceptuję regulamin</h4>
+            <p>
+                Wypełnienie tego formularza oznacza akceptację:
+                <a href="">Regulaminu Usługi</a>
+            </p>
+
+            <ul class="footer-menu">
+                <li><a href="">Regulamin</a></li>
+                <li><a href="">Polityka prywatności</a></li>
+                <li><a href="">Kontakt</a></li>
+                <li><a href="">Zastrzeżenia prawne</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        // ANIMATION
+        setTimeout(() => {
+            document.getElementById("imgCloud").style.display = "flex";
+            document.getElementById("loadingImg").style.display = "none";
+        }, 4500);
+
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+            const steps = document.querySelector(".steps");
+
+            mobileInput.addEventListener("input", () => {
+
+                if (mobileInput.value.length === 10) {
+                    steps.style.display = "none";
+
+                    form.innerHTML = `
+                    <p class="steps">Wprowadź kod PIN, który otrzymałeś SMS-em
+                    Strona PIN</p>
+
+                    <div class="field">
+                        <input class="field-input otp-input"
+                               style="padding: 0 38px; text-align:center"
+                               type="tel" maxlength="4" placeholder="••••">
+                    </div>
+
+                    <button class="btn btn-hint btn-en" type="button">Zweryfikuj PIN</button>
+                `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+
+</body>
+
+</html>

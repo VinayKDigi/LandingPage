@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beyond Health – Activation</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="bg"></div>  
+    <div class="wrapper">
+        <header class="header mt-10">
+            <div class="logo logo-center mt-10">
+                <img src="./BH-logo.png" alt="Beyond Health Logo" width="250" />
+            </div>
+        </header>
+
+        <form class="form-en form-area text-center">
+            <label>أدخل رقم هاتفك لاستلام رمز التحقق:</label>
+
+            <div class=" field">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="----------">
+                <div class="field-input__prefix">+968</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn btn-hint btn-en submit-btn" type="button" disabled>
+                <span>
+                    << </span> اشترك الآن <span> >> </span>
+            </button>
+
+        </form>
+
+        <div class="d-flex flex-column align-items-center mt-10">
+           
+            <div class="footer">
+                <p style="text-align:justify" class="visible">
+                    <br><strong>الشروط والأحكام:</strong>
+                    <br> بالضغط على زر الاشتراك أعلاه، فإنك توافق على الشروط والأحكام التالية:
+                    <br>
+                    <br>1. سوف تشترك في خدمة Beyond Lifestyle، وسيتم تجديد اشتراكك تلقائياً.
+                    <br>2. هذه الخدمة متاحة لمشتركي Ooredoo بسعر 0.3 ريال عُماني يومياً.
+                    <br>3. لإلغاء الاشتراك في أي وقت، أرسل UNSUB BL إلى 92618.
+                    <br>4. للاستفادة من هذه الخدمة، يجب أن يكون عمرك أكثر من 18 عاماً أو أن تحصل على موافقة ولي الأمر أو
+                    الشخص المسؤول عن دفع الفاتورة.
+                    <br>5. سيتم خصم الرسوم من رصيد المستخدم.
+                </p>
+            </div>
+
+            <div class="copyright">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-12 col-12">
+                            <div class="footer-buttons text-end text-md-center">
+                                <ul class="list-unstyled visible">
+                                    <li><a href="">الشروط والأحكام</a></li>
+                                    <li><a href="">سياسة الخصوصية</a></li>
+                                    <li><a href="">اتصل بنا</a></li>
+                                    <li><a href="">إخلاء المسؤولية</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                // when mobile is filled 10 digits → replace input
+                if (mobileInput.value.length === 10) {
+
+                    // Replace mobile field with OTP field
+                    form.innerHTML = `
+
+                <div class="field phone-field">
+                    <input class="field-input mobile-en otp-input" style="text-align:center" type="tel" maxlength="4" placeholder="••••">
+                </div>
+
+                <button class="btn btn-en submit-btn" type="button">تحقق من رمز التحقق</button>
+            `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+</body>
+
+</html>
