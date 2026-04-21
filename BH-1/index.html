@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Health</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="top-bar">
+            <h3>Beyond Health</h3>
+
+            <div class="lang-box">
+                <span class="active">EN</span>
+                <span class="divider">|</span>
+                <span>PL</span>
+            </div>
+        </div>
+
+        <div class="banner-wrap">
+            <h1 class="hd-text">Better Health Starts From Home</h1>
+            <p class="description">Personalized wellness solutions designed for you</p>
+            <video autoplay muted loop playsinline controls width="100%">
+                <source src="./Set-50-Healthy-Habits.mp4" type="video/mp4" />
+            </video> 
+        </div>
+   
+
+        <div class="steps">
+            <p><span class="step-num">1</span> Enter your mobile number</p>
+            <p><span class="step-num">2</span> Receive a PIN and access NOW!</p>
+        </div>
+
+        <input type="text" class="number-input pulse" placeholder="+48 xxxxxxxxx">
+        <button class="btn heartbeat">I accept the regulation.</button>
+
+        <p class="description mt-30 f-small">Activate access to: Beyond Health for 6PLN/week including VAT. This is subscription service.</p>
+
+        <div class="terms"> 
+            <p class="text f-small">
+                 You can deactivate the service by calling STOP BH on 80708 (Orange) or 80425 (T-Mobile / Plus) or 191 (Play). The fee will be added to your carrier's bill (post-paid phone) or deducted from your account balance (prepaid phone).
+            </p>
+        </div>
+
+    </div>
+    <script> 
+        setTimeout(() => {
+            document.getElementById("loadingImg").src = "./download_icon.webp";
+            document.getElementById("loadingImg").style.cssText = "width: 50px; height: 50px; margin-right: -5px";
+        }, 4500);
+    </script>
+</body>
+
+</html>
