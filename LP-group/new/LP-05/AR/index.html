@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دخول</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="../EN/index.html">
+            <button class="lang-btn">EN</button>
+        </a>
+
+        <div class="image-box">
+            <img src="./BL-img.png" />
+        </div>
+
+        <h2 class="content-title">محتواك جاهز</h2>
+
+        <div class="card form-en">
+            <p class="pntxt"> تحقق من رقم هاتفك للمتابعة </p>
+
+            <p class="pintxt1">أدخل رقم هاتفك</p>
+            <div class="field mb-2">
+                <input class="field-input mobile-en" type="tel" maxlength="10" placeholder="X XXX XXXX">
+                <div class="field-input__prefix">+968</div>
+            </div>
+
+            <div class="otp-box-en"></div>
+
+            <button class="btn subscribe-btn btn-en" type="button" disabled>
+                اشترك الآن
+            </button>
+
+            <p style="margin-top: 10px; font-size: 12px; opacity: 0.6;">
+                اشترك الآن في خدمة Magic Learn للحصول على فيديو مميز.
+            </p>
+        </div>
+
+        <div class="footer">
+            سيحصل المشتركون الجدد على يوم مجاني واحد. رسوم الاشتراك 300 دينار يوميًا.
+            للإلغاء، أرسل STOP إلى 4083.
+            للمساعدة: support@nitecell.com <br><br>
+
+            <a href="#">اتصل بنا</a> |
+            <a href="#">سياسة الخصوصية</a> |
+            <a href="#">شروط الاستخدام</a> |
+            <a href="#">الرئيسية</a>
+            <br><br>
+            © 2025 nitecell.com
+        </div>
+
+    </div>
+
+    <script>
+        function setupReplaceOTP(mobileSelector, formSelector, btnSelector) {
+
+            const mobileInput = document.querySelector(mobileSelector);
+            const form = document.querySelector(formSelector);
+            const button = document.querySelector(btnSelector);
+
+            mobileInput.addEventListener("input", () => {
+
+                if (mobileInput.value.length === 10) {
+
+                    form.innerHTML = `
+                    <p class="pintxt1"> أدخل رمز التحقق </p>
+                    <div class="field">
+                        <input class="field-input otp-input" 
+                            style="padding: 0 38px; text-align:center" 
+                            type="tel" maxlength="4" placeholder="••••">
+                    </div>
+
+                    <button class="btn subscribe-btn btn-en" type="button">تأكيد الرمز</button>
+                `;
+                }
+            });
+        }
+
+        setupReplaceOTP(".mobile-en", ".form-en", ".btn-en");
+    </script>
+
+</body>
+
+</html>
