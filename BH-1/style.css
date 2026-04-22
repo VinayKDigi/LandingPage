@@ -13,8 +13,8 @@
 } */
 
 body {
-    background-image: url(./bg-grad.png);
-    background-color: #f1f1f1;
+    /* background-image: url(./bg-grad.png); */
+    background-color: #8e5df6;
     font-family: 'Poppins', sans-serif;
     color: #FFF;
     line-height: 1.5;
@@ -354,4 +354,13 @@ body {
     max-width: 100%;
     height: auto;
     border-radius: 15px;
+}
+
+
+.BL_logo{
+    max-width: 150px;
+}
+.BL_logo img {
+    width: 100%;
+    height: auto;
 }
