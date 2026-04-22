@@ -14,7 +14,7 @@
 
 body {
     /* background-image: url(./bg-grad.png); */
-    background-color: #8e5df6;
+    background-color: #6989a3;
     font-family: 'Poppins', sans-serif;
     color: #FFF;
     line-height: 1.5;
@@ -25,9 +25,9 @@ body {
 .wrapper {
     width: 100%;
     max-width: 380px;
-    padding: 15px;
+    padding: 15px 0;
     border-radius: 10px;
-    color: #000;
+    color: #fff;
     text-align: center;
     margin: auto;
 }
