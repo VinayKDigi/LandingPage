@@ -377,10 +377,10 @@ body {
 
 .subscribe-section {
   /* background: #1f6b73; */
-  padding: 40px 20px;
+  padding: 20px;
   text-align: center;
   position: relative;
-  margin-top: 50px;
+  margin-top: 20px;
   color: #000;
 }
 
@@ -398,6 +398,7 @@ body {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  opacity: 0.4;
 }
 
 .content p {

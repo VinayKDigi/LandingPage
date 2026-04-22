@@ -307,3 +307,61 @@ body {
 .description a:hover {
   text-decoration: underline;
 }
+
+.subscribe-btn {
+  background: #ff1e1e;
+  color: #fff;
+  border: none;
+  padding: 14px 40px;
+  font-size: 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 20px;
+}
+
+.subscribe-btn:hover {
+  background: #e60000;
+}
+
+
+.BL_logo{
+    max-width: 120px;
+}
+.BL_logo img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.bg{
+    background-image: url("./bg_image_bh.jpg") ;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index:-2;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+.wrapper {  
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: -1;
+    background-size: cover;
+    opacity: 0.08;
+}
