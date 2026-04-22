@@ -428,3 +428,12 @@ body {
 .subscribe-btn:hover {
   background: linear-gradient(273.01deg, #dc2430 -8.03%, #dc2430 109.58%);
 }
+
+
+
+.banner-wrap {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #000;
+}
